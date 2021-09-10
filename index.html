@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+<style>
+
+/* Menu Structure */
+
+body {
+  margin: 0;
+  font-size: 26px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
+}
+
+.header {
+  background-color: ;
+  padding: 10px;
+  text-align: left;
+  z-index: 10;
+  display: block;
+}
+
+#navbar {
+  overflow: hidden;
+  background-color: white;
+  z-index: 10;
+  box-shadow: 0px 0px 5px black;
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 15px 15px;
+  text-decoration: none;
+  font-size: 20px;
+  z-index: 10;
+}
+
+#navbar a:hover {
+  background-color: springgreen;
+  color: black;
+  z-index: 10;
+}
+
+#navbar a.active {
+  background-color: #04AA6D;
+  color: white;
+  z-index: 10;
+}
+
+.content {
+  padding-top: auto;
+  height: 100%;
+  display: flex;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 25px;
+  padding-top: 5px;
+  background-color: springgreen;
+  color: black;
+  text-align: center;
+  font-size: 20px;
+  opacity: 0.8;
+}
+
+/* Text and Font Formatting */
+
+h1 {
+  font-family: helvetica;
+  color: springgreen;
+  display: inline;
+  margin: 13px;
+  font-size: 5vw;
+}
+
+h2 {
+  font-family: helvetica;
+  color: springgreen;
+  margin: auto;
+}
+
+h3 {
+  font-family: helvetica;
+  color: white;
+  margin: 50px;
+}
+
+h4 {
+  font-family: helvetica;
+  color: white;
+  margin: 50px;
+}
+
+h5 {
+  font-family: helvetica;
+  color: black;
+  display: inline;
+  margin: 50px;
+}
+
+/* Link Formatting */
+
+a:link {
+  color: black;
+  text-decoration: none;
+}
+
+a:visited {
+  color:;
+  text-decoration: none;
+}
+
+a:hover {
+  color:;
+}
+
+a:active {
+  color:;
+}
+
+/* DIV Formatting */
+
+div.title_center {
+  text-align: center;
+}
+
+div.content_center {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+div.content_light {
+  width: 100%;
+  height:100%;
+  margin:auto;
+  background: rgb(255,255,255);
+  background: linear-gradient(125deg, rgba(255,255,255,1) 0%, rgba(235,235,235,1) 100%);
+
+}
+div.content_dark {
+  width: 100%;
+  height: 100%;
+  background: rgb(0,0,0);
+  background: linear-gradient(125deg, rgba(0,0,0,1) 0%, rgba(47,47,47,1) 100%);
+}
+
+
+/* Contents Formatting */
+
+strong {
+  word-wrap: break-word;
+}
+.content_wrap1 {
+  display: flex;
+  width: auto;
+  margin: 50px;
+}
+.content_wrap2 {
+  display: flex;
+  width: auto;
+  margin: 50px;
+}
+.content_wrap3 {
+  display: flex;
+  width: auto;
+  margin: auto;
+}
+.content_wrap4 {
+  display: flex;
+  width: auto;
+  margin: auto;
+}
+.column_left {
+  float: left;
+  flex: 1;
+  width: 45%;
+  padding: auto;
+  display: block;
+  margin: 0 auto;
+}
+.column_right {
+  float: right;
+  width: 45%;
+  padding: auto;
+  display: block;
+  margin: 0 auto;
+}
+.row {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.image_left {
+  float: left;
+  flex: 1;
+  width: 30%;
+  padding: auto;
+  display: block;
+  margin: 0 auto;
+  align-content: right;
+}
+
+.image_right {
+  float: right;
+  width: 30%;
+  padding: auto;
+  align-content: left;
+  display: block;
+  margin: 0 auto;
+}
+
+.text_left {
+  float: left;
+  flex: 1;
+  width: 60%;
+  padding: auto;
+}
+.text_right {
+  float: right;
+  width: 60%;
+  padding: auto;
+}
+p.body {
+  font-family: helvetica;
+  font-size: 0.8em;
+  color: white;
+  margin: 50px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+p.body_light {
+  font-family: helvetica;
+  font-size: 0.8em;
+  color: black;
+  margin: 50px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+p.body_left {
+  font-family: helvetica;
+  font-size: 0.7em;
+  color: black;
+  margin: 50px;
+  text-align: ;
+}
+
+ul {
+  font-family: helvetica;
+  font-size: 0.8em;
+  color: White;
+  margin-left: 35px;
+  text-align: left;
+}
+
+img {
+  max-width: 100%;
+  opacity: 0.9;
+  overflow: hidden;
+  z-index: -10;
+}
+
+figcaption {
+  font-size: 0.7em;
+  text-align: left;
+  opacity: .5;
+}
+
+</style>
+
+<head>
+<meta charset="utf-8">
+<title>COSC1078 - Wildcats - Assignment 2: Team Profile</title>
+</head>
+
+<body>
+<a id="1"></a>
+<div id="header">
+  <h1>WILDCATS ASSIGNMENT 2: TEAM PROFILE</h1><br>
+</div>
+<div id="navbar">
+  <a href="#1">TEAM PROFILE</a>
+  <a href="#2">TOOLS</a>
+  <a href="#3">INDUSTRY DATA</a>
+  <a href="#4">IT WORK</a>
+  <a href="#5">IT TECHNOLOGIES</a>
+  <a href="#6">PROJECT IDEAS</a>
+  <a href="#7">FEEDBACK</a>
+  <a href="#8">GROUP REFLECTION</a>
+</div>
+<div class="content">
+  <div class="content_dark">
+    <br>
+    <h1>TEAM PROFILE</h1>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  </div>
+</div>
+    <a id="2"></a>
+    <div class="content_light">
+      <br>
+      <br>
+      <h1>TOOLS</h1>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    </div>
+    <a id="3"></a>
+    <div class="content_dark">
+      <br>
+      <br>
+      <h1>INDUSTRY DATA</h1>
+      <div class="content_wrap1">
+        <div class="row">
+          <div class="column_left">
+            <h2 style="color:; margin: 50px;">HEADING 1</h2>
+
+          </div>
+          <div class="column_right">
+            <h2 style="color:; margin: 50px;">HEADING 2</h2>
+          </div>
+        </div>
+      </div>
+      <div class="content_wrap2">
+        <div class="row">
+          <div class="column_left">
+            <h2 style="color:; margin: 50px;">HEADING 3</h2>
+          </div>
+          <div class="column_right">
+            <h2 style="color:; margin: 50px;">HEADING 4</h2>
+          </div>
+        </div>
+      </div>
+      <a id="4"></a>
+    <div class="content_light">
+      <br>
+      <br>
+      <h1>IT WORK</h1>
+      <br><br>
+      <div class="title_center"><h1 style="color:darkslategrey;">H1</h1></div>
+      <br>
+      <div class="content_wrap3">
+        <div class="row">
+          <div class="column_left">
+          </div>
+          <div class="column_right">
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="title_center"><h1 style="color:darkslategrey;">H2</h1></div>
+      <br>
+      <div class="content_wrap3">
+        <div class="row">
+          <div class="column_left">
+          </div>
+          <div class="column_right">
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="title_center"><h1 style="color:darkslategrey;">H3</h1></div>
+      <br>
+      <div class="content_wrap3">
+        <div class="row">
+          <div class="column_left">
+          </div>
+          <div class="column_right">
+          </div>
+        </div>
+      </div>
+      </div>
+      <a id="5"></a>
+      <div class="content_dark">
+        <br>
+        <br>
+        <h1>IT TECHNOLOGIES</h1>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+      <a id="6"></a>
+      <div class="content_dark">
+        <br>
+        <br>
+        <h1>PROJECT IDEAS</h1>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+      <a id="7"></a>
+      <div class="content_dark">
+        <br>
+        <br>
+        <h1>FEEDBACK</h1>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+      <a id="8"></a>
+      <div class="content_dark">
+        <br>
+        <br>
+        <h1>GROUP REFLECTION</h1>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+<a id="9"></a>
+    <div class="content_light">
+      <br>
+      <br>
+      <h1>REFERENCES</h1>
+      <p class="body_light">
+      </p>
+    </div>
+<div class="footer">
+<a href="#1"><h5>BACK IT UP</h5></a>
+</div>
+</div>
+
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
+</body>
+</html>
