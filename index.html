@@ -16,6 +16,7 @@ body {
   background: rgb(2,20,162);
   background: linear-gradient(340deg, rgba(2,20,162,1) 0%, rgba(0,196,255,1) 100%);
   box-shadow: 5px rgba(0,0,0,0.2);
+  z-index: 10;
 }
 
 .navbar a {
@@ -45,13 +46,14 @@ body {
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: white;
+  background-color: ;
   color: black;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
+  color: black;
   background-color: white;
   min-width: 160px;
   box-shadow: 0px 8px 16px 10px rgba(0,0,0,0.2);
@@ -292,7 +294,9 @@ figcaption {
 
 <body>
   <div class="navbar">
-    <a href="#home">W I L D C A T S - A2</a>
+    <a href="#home">
+    <img style="height:50%;width:50%;" src="site/images/header_white.png">
+    </a>
     <div class="dropdown">
       <button class="dropbtn">About the team
         <i class="fa fa-caret-down"></i>
