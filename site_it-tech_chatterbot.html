@@ -131,7 +131,6 @@ h1 {
   font-family: helvetica;
   color: black;
   display: inline;
-  margin-left: ;
   font-size: 5vw;
 }
 
@@ -393,11 +392,13 @@ figcaption {
   <div class="content_dark">
     <br>
     <br>
-    <h1>Natural Language processing and chatterbots</h1>
+    <h1>Natural Language Processing and Chatterbots</h1>
     <h2>What is it?</h2>
   <p class="body">Natural Language Processing (NLP) is a part of the branch of computer science involving artificial intelligence that is concerned with giving computers the ability to understand speech and text, similarly to humans. The combination of the rule-based modeling of language, called computational linguistics, with machine learning, deep learning and statistical models allows for computers to process human language as a whole as text or voice data and allows it to completely ‘understand’ it, including intent and sentiment. NLP aims to allow computer programs to translate text from one language to another, be able to respond and act upon spoken commands, and summarise copious amounts of text at a rapid rate, even in real time. A major challenge in NLP lies in effective propagation of derived knowledge when individualising one part of textual data to another. NLP tools have gone through a major evolutionary chain from basic Recurrent Neural Networks (RNN’s) to Long Short-Term Memory Networks (LSTM’s), upgrading towards the “Transformer” model architectures, which spawned many variants. </p>
-
-
+    <h2>State-of-the-Art Techniques in NLP:</h2>
+  <p class = "body">RNN’s are variants of regular feedforward fully connected neural networks having memory in their models. RNN’s are recurrent in how they perform the same function for each input datapoint. The output for a given input depends on the data processed from the previous cell. After the output has been produced, a copy is sent back into the network. When deciding, it considers the current input and the previous output it received and what it has learned. </p>
+  <p class = "body">LSTMs are a modified version of RNN’s. This makes remembering past data in the memory more efficient. LSTM is suited for the classification, processing and predicting of time series when given time lags of an unknown duration. LSTM’s have three gates that information is processed through: the input gate, the forget gate and the output gate. Each gate allows for two quantities of information to be processed at any one time. It also has the hidden cell data and the output for the cell. </p>
+  <p class = "body">LTSM and its variants initially seemed to be a solution to the issue of gradients disappearing to develop coherent sentences. However, there is a limit to the amount of information that can be saved as there is a complex sequential pathway from the previous cell to the current cell. This causes the number of sequences that LSTMs can remember to be limited to ‘just a few hundred words. </p>
   </div>
 
 <script>
