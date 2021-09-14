@@ -51,20 +51,20 @@ a.back-to-top {
 /* navbar */
 .navbar {
   overflow: hidden;
-  background: rgb(2,20,162);
-  background: linear-gradient(340deg, rgba(2,20,162,1) 0%, rgba(0,196,255,1) 100%);
   z-index: 10;
   text-align: center;
   justify-content: center;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .navbar a {
   text-align: center;
   float: left;
-  font-size: 2em;
+  font-size: 3vh;
   color: white;
   text-align: center;
-  justify-content: center;
   padding: 14px 16px;
   text-decoration: none;
   box-shadow: 5px rgba(0,0,0,0.2);
@@ -76,7 +76,7 @@ a.back-to-top {
 }
 
 .dropdown .dropbtn {
-  font-size: 2em;
+  font-size: 3vh;
   border: none;
   outline: none;
   color: white;
@@ -127,11 +127,12 @@ header {
 }
 
 h1 {
-  font-family: helvetica;
+  font-family: arial;
   color: black;
   display: inline;
   margin-left: ;
   font-size: 5vw;
+  letter-spacing: 2px;
 }
 
 h2 {
@@ -169,6 +170,13 @@ h6 {
 
 
 /* DIV Formatting */
+div.container {
+  background: rgb(2,20,162);
+  background: linear-gradient(340deg, rgba(2,20,162,1) 0%, rgba(0,196,255,1) 100%);
+  width:100%;
+  text-align: center;
+}
+
 
 div.title_center {
   text-align: center;
@@ -230,20 +238,20 @@ strong {
   margin: 0;
 }
 .column_right {
-  float: right;
+  float: inherit;
   width: 85%;
   padding: auto;
   display: block;
-  margin: 0;
+  margin: auto;
 }
 
 .author {
-  float:right;
+  float:none;
   width:15%;
   flex: 1;
   padding: auto;
-  display: block;
-  margin: 0;
+  display: inline-block;
+  margin-top: 0%;
 }
 
 .row {
@@ -284,57 +292,53 @@ strong {
 }
 
 p.heading {
-  font-family: helvetica;
-  font-size: 6em;
+  font-family: arial;
+  font-size: 7vw;
   color: black;
-  margin:auto;
-  text-align: center;
-  text-justify: inter-word;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 0%;
+  margin-bottom: 0%
+  text-align: left;
+  letter-spacing: 2px;
+  word-wrap: break-word;
+  text-shadow: 5px 5px 5px grey;
+  line-height: 1;
 }
 
 p.subheading {
-  font-family: helvetica;
-  font-size: 2.5em;
+  font-family: arial;
+  font-size: 3.5vw;
   color: grey;
   margin-left: 5%;
   margin-right: 5%;
   text-align: center;
   text-justify: inter-word;
+  letter-spacing: 2px;
 }
 p.body {
-  font-family: helvetica;
-  font-size: 1.2em;
-  color: black;
+  width:80%;
+  font-family: arial;
+  font-size: 18px;
+  color: grey;
   margin-left: 10%;
   margin-right: 10%;
-  text-align: justify;
-  text-justify: inter-word;
-}
+  text-align: body_left;
+  line-height: 1.6;
 
-p.body_light {
-  font-family: helvetica;
-  font-size: 0.8em;
-  color: black;
-  margin: 20%;
-  text-align: justify;
-  text-justify: inter-word;
-}
-
-p.body_left {
-  font-family: helvetica;
-  font-size: 0.7em;
-  color: black;
-  margin: 50px;
-  text-align: ;
+  letter-spacing: 2px;
 }
 
 ul {
-  font-family: helvetica;
-  font-size: 1.2em;
-  color: black;
+  font-family: arial;
+  font-size: 18px;
+  color: grey;
   margin-left: 10%;
   margin-right: 10%;
   text-align: left;
+  letter-spacing: 2px;
+  line-height: 1.6;
 }
 
 img {
@@ -362,11 +366,13 @@ figcaption {
 </head>
 
 <body>
+  <div class="container">
   <a href="#" id="back-to-top" class="back-to-top" style="display: inline;">Top</a>
-  <div class="navbar">
+
     <a href="index.html">
     <img style="height:50%;width:50%;" src="site/images/header_white.png">
     </a>
+  <div class="navbar">
     <div class="dropdown">
       <button class="dropbtn">About the team
         <i class="fa fa-caret-down"></i>
@@ -404,20 +410,20 @@ figcaption {
     <a href="site_projectideas.html">Project Ideas</a>
     <a href="site_references.html">References</a>
   </div>
+</div>
   <a id="1"></a>
   <div class="content_dark">
     <div class="content_center">
-        <img src="site/images/cybersecurity/terminal_window.png">
     </div>
-    <p class="heading"><i>What is Cybersecurity?</i></p>
       <div class="content_wrap1">
         <div class="author">
-          <img class="circle" src="site/images/team/a1_profile_dan.JPG">
+          <img class="circle" style="width:50%;" src="site/images/team/a1_profile_dan.JPG">
           <p style="font-size:1em; color:darkslategrey;">
             Article written by<br> <strong>Daniel Nanthathammiko S3196237</strong>
           </p>
         </div>
         <div class="column_right">
+          <p class="heading">What is Cybersecurity?</p>
             <p class="body">
               What is Cybersecurity? Cybersecurity, also known as IT (Information Technology) Security is the act of securing networks and IT systems from threats, whether they are outside of systems or from within our workplaces, homes or somewhere in-between.
             </p>
@@ -430,6 +436,7 @@ figcaption {
             <p class="body">
               The technology at the heart of cybersecurity is guided by the threats at hand as cybersecurity isn’t implemented with a singular technology stack. It is a layered approach to fully protect our systems from threats that will occur on multiple layers. These layers can include:
               Infrastructure security of IT and sensitive data: Physically securing the premises to protect sensitive data from theft, damage, or loss. This could be locks on your doors with limited access, security systems such as alarms and surveillance. This level of security can be implemented at your workplace or home for reasonable costs and is the first thing to be implemented.<br><br>
+<img src="site/images/cybersecurity/terminal_window.png">
               As an example, at my workplace I have installed:
             </p>
             <p class="body">
@@ -442,7 +449,7 @@ figcaption {
             </p>
             <img src="site/images/cybersecurity/ring.png">
             <div class="title_center">
-              <h1>Network Security</h1>
+              <p class="subheading">Network Security</p>
             </div>
             <p class="body">
                 This is usually the first we would associate with cybersecurity. Protecting your internal networks (LAN) can be as simple as having passwords on all computers and devices that automatically connect to your intranet and only providing certain permissions to certain users and their devices. Other ways to protect your network can include:
@@ -459,7 +466,7 @@ figcaption {
               As time goes on, routers and modems are becoming increasingly intelligent and cost effective when it comes to fully securing your LAN from attacks. Recently I purchased a Draytek modem with a built OpenVPN configuration to secure my home network as well as my work one. This is a layer ontop of a Synology NAS I have setup. The technology is still complicated if you want to extract all of the benefits being offered, however it is now within reach of many home users for securing networking and internet activities.
             </p>
             <div class="title_center">
-              <h1>Application security</h1>
+              <p class="subheading">Application security</p>
             </div>
               <p class="body">
                 As we utilise more conveniences online, Application Security has become increasingly urgent to ensure end user safety. Let’s take banking as an example, a large majority of Australians now use online banking on their phones or computers as it is incredibly convenient and instantaneous.
@@ -480,7 +487,7 @@ figcaption {
                 This is changing though and is moving more towards using authenticator apps as the only way to beat this is to physically clone a phone, which would require physical access to the device, which would be too difficult and time consuming to do.
               </p>
             <div class="title_center">
-              <h1>Cloud security</h1>
+              <p class="subheading">Cloud security</p>
             </div>
               <p class="body">
                 The cloud has made our lives a lot easier to manage many aspects of our work and personal lives. I do take for granted the ease of working on multiple devices yet having all my work readily available and backed up. Encryption is the key here though as we require complete protection when we trust all our work and personal files, photos and documents to live online, free for exploitations and theft.
@@ -495,7 +502,7 @@ figcaption {
               </p>
               <img src="site/images/cybersecurity/aws.png">
               <div class="title_center">
-                <h1>End-user education</h1>
+                <p class="subheading">End-user education</p>
               </div>
               <p class="body">
                 Education of best practice with IoT devices and computers connected to LAN with sensitive data is something that is the simplest thing to implement however is probably where most systems are exposed. Simple things such as reusing passwords or clicking on links and ads online can expose any home or work IT network to malicious attacks, exploits and data theft. In my experience I have educated my staff and colleagues:
@@ -558,7 +565,7 @@ figcaption {
                 I advocate to family and friends the simplicity of the measures I have taken and help them to utilise these same smarter and secure measures. I attempt to educate in basic internet street smarts to provide us (educate workmates for example) with a secure online life.
               </p>
   </div>
-
+</div>
 <script>
   var link = document.getElementById("back-to-top");
   var amountScrolled = 250;
