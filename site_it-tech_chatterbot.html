@@ -131,7 +131,8 @@ h1 {
   font-family: helvetica;
   color: black;
   display: inline;
-  font-size: 5vw;
+  font-size: 3vw;
+  margin-left: 150px;
 }
 
 h2 {
@@ -259,6 +260,14 @@ strong {
   margin: 0 auto;
 }
 
+.image_center {
+  float: center;
+  width: 30%;
+  padding: auto;
+  display: block;
+  margin: 0 auto;
+}
+
 .text_left {
   float: left;
   flex: 1;
@@ -271,9 +280,33 @@ strong {
   padding: auto;
 }
 
+.author {
+  float:none;
+  width:15%;
+  flex: 1;
+  display: inline-block;
+  margin-top: 2%;
+  margin-left: 5%;
+}
+
+.column_right {
+  float: inherit;
+  width: 85%;
+  padding-left: 200px;
+  display: block;
+  margin: auto;
+  position: absolute;
+  top: 410px;
+}
+
+img.circle {
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px 0px;
+}
+
 p.heading {
-  font-family: helvetica;
-  font-size: 6em;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 4em;
   color: black;
   margin-left: 10%;
   margin-right: 10%;
@@ -298,6 +331,7 @@ p.body {
   margin-right: 10%;
   text-align: justify;
   text-justify: inter-word;
+
 }
 
 p.body_light {
@@ -389,17 +423,38 @@ figcaption {
     <a href="site_references.html">References</a>
   </div>
   <a id="1"></a>
-  <div class="content_dark">
-    <br>
-    <br>
-    <h1>Natural Language Processing and Chatterbots</h1>
-    <h2>What is it?</h2>
-  <p class="body">Natural Language Processing (NLP) is a part of the branch of computer science involving artificial intelligence that is concerned with giving computers the ability to understand speech and text, similarly to humans. The combination of the rule-based modeling of language, called computational linguistics, with machine learning, deep learning and statistical models allows for computers to process human language as a whole as text or voice data and allows it to completely ‘understand’ it, including intent and sentiment. NLP aims to allow computer programs to translate text from one language to another, be able to respond and act upon spoken commands, and summarise copious amounts of text at a rapid rate, even in real time. A major challenge in NLP lies in effective propagation of derived knowledge when individualising one part of textual data to another. NLP tools have gone through a major evolutionary chain from basic Recurrent Neural Networks (RNN’s) to Long Short-Term Memory Networks (LSTM’s), upgrading towards the “Transformer” model architectures, which spawned many variants. </p>
-    <h2>State-of-the-Art Techniques in NLP:</h2>
-  <p class = "body">RNN’s are variants of regular feedforward fully connected neural networks having memory in their models. RNN’s are recurrent in how they perform the same function for each input datapoint. The output for a given input depends on the data processed from the previous cell. After the output has been produced, a copy is sent back into the network. When deciding, it considers the current input and the previous output it received and what it has learned. </p>
-  <p class = "body">LSTMs are a modified version of RNN’s. This makes remembering past data in the memory more efficient. LSTM is suited for the classification, processing and predicting of time series when given time lags of an unknown duration. LSTM’s have three gates that information is processed through: the input gate, the forget gate and the output gate. Each gate allows for two quantities of information to be processed at any one time. It also has the hidden cell data and the output for the cell. </p>
-  <p class = "body">LTSM and its variants initially seemed to be a solution to the issue of gradients disappearing to develop coherent sentences. However, there is a limit to the amount of information that can be saved as there is a complex sequential pathway from the previous cell to the current cell. This causes the number of sequences that LSTMs can remember to be limited to ‘just a few hundred words. </p>
+  <div class="author">
+    <img class="circle" style="width:50%;" src="site/images/team/a1_profile_brayden.PNG">
+    <p style="font-size:1em; color:darkslategrey;">
+      Article written by<br> <strong>Braydan Shalders s3781601</strong>
+    </p>
   </div>
+<div class="content_dark">
+  <div class="column_right">
+      <p class = "heading">Natural Language Processing and Chatterbots</h1>
+      <h2>What is it?</h2>
+    <p class="body">Natural Language Processing (NLP) is a part of the branch of computer science involving artificial intelligence that is concerned with giving computers the ability to understand speech and text, similarly to humans. The combination of the rule-based modeling of language, called computational linguistics, with machine learning, deep learning and statistical models allows for computers to process human language as a whole as text or voice data and allows it to completely ‘understand’ it, including intent and sentiment. NLP aims to allow computer programs to translate text from one language to another, be able to respond and act upon spoken commands, and summarise copious amounts of text at a rapid rate, even in real time. A major challenge in NLP lies in effective propagation of derived knowledge when individualising one part of textual data to another. NLP tools have gone through a major evolutionary chain from basic Recurrent Neural Networks (RNN’s) to Long Short-Term Memory Networks (LSTM’s), upgrading towards the “Transformer” model architectures, which spawned many variants. </p>
+      <h2>State-of-the-Art Techniques in NLP:</h2>
+    <p class = "body">RNN’s are variants of regular feedforward fully connected neural networks having memory in their models. RNN’s are recurrent in how they perform the same function for each input datapoint. The output for a given input depends on the data processed from the previous cell. After the output has been produced, a copy is sent back into the network. When deciding, it considers the current input and the previous output it received and what it has learned. </p>
+    <img class="image_center" style="width:90%;" src="site/images/NLP & Chatterbots/RNN.png">
+    <p class = "body">LSTMs are a modified version of RNN’s. This makes remembering past data in the memory more efficient. LSTM is suited for the classification, processing and predicting of time series when given time lags of an unknown duration. LSTM’s have three gates that information is processed through: the input gate, the forget gate and the output gate. Each gate allows for two quantities of information to be processed at any one time. It also has the hidden cell data and the output for the cell. </p>
+    <p class = "body">LTSM and its variants initially seemed to be a solution to the issue of gradients disappearing to develop coherent sentences. However, there is a limit to the amount of information that can be saved as there is a complex sequential pathway from the previous cell to the current cell. This causes the number of sequences that LSTMs can remember to be limited to ‘just a few hundred words. </p>
+    <img class="image_center" style="width:90%;" src="site/images/NLP & Chatterbots/LSTM.png">
+    <p class = "body">The Compressive Transformer model was proposed in 2019 by Google’s DeepMind as a long-range memory model. The paper written about it details how humans understand memory as the storage of past life-experiences in compressed form within the brain, and how humans have the ability to recall information and memories stored over a decade prior. It says that this is possible because we do not store all the sensory information we experienced at the time, but instead select, filter, and integrate the information into our memories via lossy compression. The Compressive Transformer is an extended variation of the Transformer model which similarly maps past hidden activations generated in the model to a smaller set of compressed memories. To achieve much better results, it uses the Attention Mechanism across all its memories and compressed memories, which gives it the ability to query both its short-term granular memory and longer-term coarse memory. </p>
+    <img class="image_center" style="width:90%;" src="site/images/NLP & Chatterbots/Compressive.png">
+    <p class = "body">NLP has many different applications within modern technology. The most common of these being search autocorrect and autocomplete. This is a feature of browsing that many take for granted but it has had a significant quality-of-life impact on everyday users of browsers and even social media. </p>
+    <p class = "body">Language Translators are also part of the wide variety of technologies spawned from NLP technologies. Applications like google translate have been incredibly helpful to many people. Translators use machine translation and used to be based on dictionary-based rule systems, which was not always the most accurate, but due to constant upgrading of NLP models and the availability of vast amounts of data, the accuracy has increased greatly. </p>
+    <p class = "body">Chatbots are incredibly useful to major companies when it comes to customer service and experience. Interacting with each and every customer manually is virtually impossible, especially so for larger companies. Chatbots are able to solve basic queries or are able to direct the customer to a representative if necessary. This not only saves the customer from having to wait in a queue to talk to a representative and saves the company money in call-center representative hiring. </p>
+    <p class = "body">Voice Assistants are programs that utilise speech recognition, natural language and understanding to comprehend verbal commands from the user and perform action accordingly. Voice Assistants are incredibly helpful with quality-of-life aspects of everyday living.</p>
+    <p class = "body">The future of NLP for the moment is more leaning towards making what already exists bigger and better. With the exponential growth of the NLP technologies, as well as the accessible data, NLP will continue to evolve and improve on what already exists and become more prevalent in different industries. Currently, NLP technologies regarding translation have mostly been focused on English, but major tech companies such as Google and Facebook are beginning to roll out multilingual models with performance on par with monolingual models. </p>
+    <p class = "body">Chatbots will also be seeing an upgrade in the future. Strides are being made in giving chatbots the ability to have longer, more complex conversations, as well as the ability to self-improve and teach themselves how to solve tasks they not previously have been trained on. Chatbots will be able to handle increasingly complex tasks, which will create less of a need for human interaction, which would only be required for high-level issues. </p>
+    <p class = "body">All this is possible thanks to the ever-accessible wealth of data on text and speech. With these databases becoming bigger and more accessible, as well as the evolution of the models used in NLP. We should see exponential growth in that field as it becomes more and more mainstream. </p>
+    <h2>What is the likely impact?</h2>
+    <p class = "body">NLP is incredibly important not only regarding increasing quality of life, but it can also help resolve ambiguity in language. When it comes to human language, there are only a certain number of rules that are to be followed, beyond that, it is free reign for context-bound, sentimentality and randomness. As NLP technologies become better, AI will understand the free-flowing rules of human speech and be able to mimic and respond with better and better clarity. This also applies to the translation of languages. Sometimes phrases or words do not directly translate between languages, but interpreters will find a way to get the message across. NLP technologies will be able to do this in the future with more efficiency and less individual-based interpretation. What will end up changing is that jobs will become redundant, such as interpreters, because having an AI that will be able to do the job not only for free, but with more efficiency will be more beneficial to a company. Within a company, NLP technologies are used within companies to help make operations both more cost efficient and time efficient. The general public will also be affected by the increasingly growing field of NLP. With technologies like targeted marketing, users will have their online activity monitored and in return be shown products they may need or have shown interest in. This change in the industry will both create and make jobs redundant. As mentioned earlier, jobs such as interpreters will be made redundant as having a speech-recognition and translation AI would be much more efficient and cost-worthy than hiring an interpreter. It will create jobs in that people will need to program, maintain, and implement the AI and other technologies related to NLP. Technologies like the ones possible with NLP will make companies perform more efficiently, as well as increasing quality of life for the general public. </p>
+    <h2>How will this affect you?</h2>
+    <p class = "body">The evolution and growth of NLP technologies can only make things easier for us when it comes to our day-to-day lives. NLP technologies will make translation applications better, allow for home assistant technology to become more advanced, and be able to handle more complex commands and tasks. When it comes to online activity, everything from predictive text and searching to spell-check will be improved and polished to be the best it can be. We utilise and take for granted the trivial things that NLP technologies provide for us through our daily lives. With NLP technology, even large volumes of text will be summarised in order to efficiently deliver the message to users. NLP has been providing small quality-of-life benefits that we may look over and will continue to do so with efficiency and effectiveness as the field and technology continue to grow.</p>
+  </div>
+</div>
 
 <script>
   var link = document.getElementById("back-to-top");
@@ -412,6 +467,7 @@ figcaption {
           link.className = 'back-to-top';
       }
   });
+
 <!-- Scrolls to Top -->
   link.addEventListener('click', function(e) {
       e.preventDefault();
