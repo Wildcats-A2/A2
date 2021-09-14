@@ -326,13 +326,21 @@ ul {
   text-align: left;
 }
 
-img {
+img.center {
   max-width: 60%;
   opacity: 0.9;
   overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
   z-index: -10;
 }
-
+  
+img.circle {
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px 0px;
+}
+  
 figcaption {
   font-size: 0.7em;
   text-align: left;
@@ -390,11 +398,17 @@ figcaption {
     <a href="site_references.html">References</a>
   </div>
   <a id="1"></a>
+   <div class="author">
+    <img class="circle" style="width:50%;" src="headshot.jpg">
+    <p style="font-size:1em; color:darkslategrey;">
+      Article written by<br> <strong>Carisse Wu s3886764</strong>
+    </p>
+  </div>
   <div class="content_dark">
     <br>
     <br>
     <h1>Cloud, Services & Servers</h1>
-    <img class="image_center" style="width:50%;" src="https://www.networksunlimited.com/wp-content/uploads/2019/02/cloud-computing.png">
+    <img src="https://www.networksunlimited.com/wp-content/uploads/2019/02/cloud-computing.png" class="center" >
   <h2>
     What does it do?
   </h2>
