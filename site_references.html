@@ -2,18 +2,108 @@
 <html>
 <style>
 
-/* Menu Structure */
-
 body {
-  margin: 0;
-  font-size: 1em;
-  font-family: helvetica, sans-serif;
-  background-color: white;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 2px;
+  background: rgb(247,247,247);
+  background: radial-gradient(circle, rgba(247,247,247,1) 0%, rgba(255,255,255,1) 50%);
 }
+
+/* DIV, Containers and Articles */
+
+article {
+  width: 80%;
+  height: auto;
+  border-bottom: 1px solid grey;
+  box-shadow: 5px rgba(0,0,0,0.2);
+  text-align: left;
+}
+
+div.container {
+  display: flex;
+  width:inherit;
+  z-index: 0;
+  overflow: scroll;
+  padding: 1px;
+}
+div.container_main {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  z-index: 0;
+  overflow: scroll;
+  padding: 1px;
+  text-align: ;
+}
+div.left {
+  width:15vw;
+  height: 100vh;
+  overflow: visible;
+  float: left;
+  z-index: 10;
+}
+div.right {
+  width: 85vw;
+  overflow: scroll;
+  display: flex;
+  margin: ;
+  z-index: 1;
+
+}
+div.title {
+  margin-top: 20px;
+  padding: 0%;
+}
+
+div.footer {
+  height: auto;
+  border-top: 1px solid grey;
+  background-color: black;
+  display: flex;
+}
+
+/* Article Divs */
+div.article1 {
+  width: 100%;
+  height: 20%;
+  order: 1;
+  float: right;
+}
+div.article2 {
+  width: 80%;
+  height: 20%;
+  order: 2;
+}
+div.article3 {
+  width: 80%;
+  height: 20%;
+  order: 3;
+}
+div.article4 {
+  width: 80%;
+  height: 20%;
+  order: 4;
+}
+
+div.article_wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+div.img {
+  width: 220px;
+  justify-content: center;
+  margin: 15px;
+
+  float:left;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
 /* Back to top start */
 .back-to-top {
-  background: rgb(2,20,162);
-  background: linear-gradient(340deg, rgba(2,20,162,1) 0%, rgba(0,196,255,1) 100%);
+  background-color: mediumspringgreen;
   color: white;
   opacity: 0;
   transition: opacity .6s ease-in-out;
@@ -40,7 +130,7 @@ a.back-to-top {
 }
 
 .back-to-top:hover, .back-to-top:focus, .back-to-top:visited {
-  color: #FFFFFF;
+  color: slategray;
 }
 
 .back-to-top.show {
@@ -48,27 +138,31 @@ a.back-to-top {
 }
 /* Back to top end */
 
-/* navbar */
+/* navigation */
 .navbar {
-  overflow: hidden;
-  background: rgb(2,20,162);
-  background: linear-gradient(340deg, rgba(2,20,162,1) 0%, rgba(0,196,255,1) 100%);
+  overflow: visible;
+  flex-direction: column;
   box-shadow: 5px rgba(0,0,0,0.2);
   z-index: 10;
-  text-align: center;
-  justify-content: center;
+  text-align: left;
+  justify-content: space-around;
+  font-family: 'Open Sans', sans-serif;
+  min-width: 200px;
+
 }
 
 .navbar a {
   text-align: center;
   float: left;
-  font-size: 2em;
-  color: white;
-  text-align: center;
+  font-size: 1.5vw;
+  color: slategrey;
+  text-align: left;
   justify-content: center;
   padding: 14px 16px;
   text-decoration: none;
   box-shadow: 5px rgba(0,0,0,0.2);
+  min-width: 200px;
+  z-index: 10;
 }
 
 .dropdown {
@@ -77,36 +171,36 @@ a.back-to-top {
 }
 
 .dropdown .dropbtn {
-  font-size: 2em;
+  font-size: 1.5vw;
   border: none;
   outline: none;
-  color: white;
+  color: slategrey;
   padding: 14px 16px;
   background-color: inherit;
-  font-family: inherit;
+  font-family: 'Open Sans', sans-serif;
   margin: 0;
 }
 .dropbtn {
   color: black;
 }
 .navbar a:hover, .dropdown:hover {
-  background-color: ;
-  color: black;
+  background-color:;
+  color: mediumspringgreen;
 }
 
 .dropdown-content {
   display: none;
-  position: absolute;
-  color: black;
+  position: ;
+  color: slategrey;
   background-color: white;
-  min-width: 160px;
+  min-width: 200px;
   box-shadow: 0px 8px 16px 10px rgba(0,0,0,0.2);
-  z-index: 1;
+  z-index: 11;
 }
 
 .dropdown-content a {
   float: none;
-  color: black;
+  color: slategrey;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -114,262 +208,154 @@ a.back-to-top {
 }
 
 .dropdown-content a:hover {
-  background-color: black;
-  color: white;
+  background-color: ;
+  color: mediumspringgreen;
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
 }
-/* Text and Font Formatting */
+
+/* Font Formatting */
 
 h1 {
-  font-family: helvetica;
-  color: black;
-  display: inline;
-  margin-left: 10%;
-  font-size: 5vw;
+  font-family: 'Open Sans', sans-serif;
+  color: slategray;
+  font-size: 7vh;
+  padding-left: 20px;
+  font-weight: bolder;
 }
-
 h2 {
-  font-family: helvetica;
-  color: grey;
-  margin-left: 10%;
+  font-family: 'Open Sans', sans-serif;
+  color: mediumspringgreen;
+  font-size: 3vh;
+  padding-left: 20px;
+  font-weight: bolder;
 }
 
 h3 {
-  font-family: helvetica;
-  color: white;
-  margin: 50px;
-}
-
-h4 {
-  font-family: helvetica;
-  color: white;
-  margin: 50px;
-}
-
-h5 {
-  font-family: helvetica;
+  font-family: 'Open Sans', sans-serif;
   color: grey;
-  display: inline;
-  margin: 50px;
-}
-h6 {
-  font-family: helvetica;
-  color: black;
-  display: inline;
-  margin: ;
-}
-/* Link Formatting */
-
-
-
-/* DIV Formatting */
-
-div.title_center {
-  text-align: center;
+  font-size: 1.5vh;
+  padding-left: 20px;
+  font-weight: lighter;
 }
 
-div.content_center {
-  margin-left: 10%;
-  margin-right: 10%;
-}
-
-div.content_light {
-  width: 100%;
-  height:100%;
-  margin:auto;
-  background: white;
-
-}
-div.content_dark {
-  width: 100%;
-  height: 100vh;
-  background: rgb(224,224,224);
-  background: linear-gradient(340deg, rgba(224,224,224,1) 0%, rgba(255,255,255,1) 50%);
-}
-
-
-/* Contents Formatting */
-
-strong {
-  word-wrap: break-word;
-}
-.content_wrap1 {
-  display: flex;
-  width: auto;
-  margin: 50px;
-}
-.content_wrap2 {
-  display: flex;
-  width: auto;
-  margin: 50px;
-}
-.content_wrap3 {
-  display: flex;
-  width: auto;
-  margin: auto;
-}
-.content_wrap4 {
-  display: flex;
-  width: auto;
-  margin: auto;
-}
-.column_left {
-  float: left;
-  flex: 1;
-  width: 45%;
-  padding: auto;
-  display: block;
-  margin: 0 auto;
-}
-.column_right {
-  float: right;
-  width: 45%;
-  padding: auto;
-  display: block;
-  margin: 0 auto;
-}
-.row {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.image_left {
-  float: left;
-  flex: 1;
-  width: 30%;
-  padding: auto;
-  display: block;
-  margin: 0 auto;
-  align-content: right;
-}
-
-.image_right {
-  float: right;
-  width: 30%;
-  padding: auto;
-  align-content: left;
-  display: block;
-  margin: 0 auto;
-}
-
-.text_left {
-  float: left;
-  flex: 1;
-  width: 60%;
-  padding: auto;
-}
-.text_right {
-  float: right;
-  width: 60%;
-  padding: auto;
-}
-p.body {
-  font-family: helvetica;
+p.heading {
+  font-family: 'Open Sans', sans-serif;
   font-size: 2em;
   color: black;
-  margin-left: 20%;
-  margin-right: 20%;
-  text-align: justify;
-  text-justify: inter-word;
-}
-
-p.body_light {
-  font-family: helvetica;
-  font-size: 0.8em;
-  color: black;
-  margin: 20%;
-  text-align: justify;
-  text-justify: inter-word;
-}
-
-p.body_left {
-  font-family: helvetica;
-  font-size: 0.7em;
-  color: black;
-  margin: 50px;
-  text-align: ;
-}
-
-ul {
-  font-family: helvetica;
-  font-size: 0.8em;
-  color: White;
-  margin-left: 35px;
+  margin-left: 5%;
   text-align: left;
+  letter-spacing: 2px;
+  line-height: 1;
+  font-weight: 900;
 }
 
-img {
-  max-width: 100%;
-  opacity: 0.9;
-  overflow: hidden;
-  z-index: -10;
-}
-
-figcaption {
-  font-size: 0.7em;
+p.subheading {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5vw;
+  color: black;
+  font-weight: bold;
+  margin-left: 10%;
+  margin-right: 10%;
   text-align: left;
-  opacity: .5;
+  text-justify: inter-word;
+  letter-spacing: 2px;
 }
+p.body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1em;
+  font-weight: lighter;
+  line-height: 1.6;
+  letter-spacing: 2px;
+  color: grey;
+  margin-left: 10%;
+  margin-right: 10%;
+  text-align: left;
+  justify-content: space-around;
+}
+
+/* IMG Formatting */
+img.logo {
+  max-width: 90%;
+}
+
+img.article {
+  width: 200px;
+  float: left;
+  justify-content:
+  display:inline-block;
+  vertical-align: middle;
+}
+
+
 
 </style>
 
 <head>
-<meta charset="utf-8">
-<title>COSC1078 - Wildcats - Assignment 2: References</title>
+  <meta charset="utf-8">
+  <title>COSC1078 - Wildcats - Assignment 2: References</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <a href="#" id="back-to-top" class="back-to-top" style="display: inline;">Top</a>
-  <div class="navbar">
-    <a href="index.html">
-    <img style="height:50%;width:50%;" src="site/images/header_white.png">
-    </a>
-    <div class="dropdown">
-      <button class="dropbtn">About the team
-        <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-content">
-        <a href="site_about.html">The Team</a>
-        <a href="site_about_team.html">Personality Profiles</a>
-        <a href="site_about_jobs.html">Ideal Jobs</a>
-        <a href="site_about_feedback.html">Feedback</a>
-        <a href="site_about_reflection.html">Group Reflection</a>
+  <div class="container">
+    <a href="#" id="back-to-top" class="back-to-top" style="display: inline;">Top</a>
+    <div class="left">
+      <div class="navbar">
+        <a href="index.html">
+        <img class="logo" src="site/images/logo.png">
+        </a>
+        <div class="dropdown">
+          <button class="dropbtn">About the team
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="site_about.html">The Team</a>
+            <a href="site_about_team.html">Personality Profiles</a>
+            <a href="site_about_jobs.html">Ideal Jobs</a>
+            <a href="site_about_feedback.html">Feedback</a>
+            <a href="site_about_reflection.html">Group Reflection</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Tools
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="site_tools_github.html">Github</a>
+            <a href="site_tools_msteams.html">MS Teams</a>
+          </div>
+        </div>
+        <a href="site_industrydata.html">Industry Data</a>
+        <a href="site_it-work.html">IT Work</a>
+        <div class="dropdown">
+          <button class="dropbtn">IT Technologies
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="site_it-tech_cloud.html">Cloud, Services & Servers</a>
+            <a href="site_it-tech_cyber.html">Cybersecurity</a>
+            <a href="site_it-tech_machine.html">Machine Learning</a>
+            <a href="site_it-tech_chatterbot.html">Natural Language processing and chatterbots</a>
+          </div>
+        </div>
+        <a href="site_projectideas.html">Project Ideas</a>
+        <a href="site_references.html">References</a>
       </div>
     </div>
-    <div class="dropdown">
-      <button class="dropbtn">Tools
-        <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-content">
-        <a href="site_tools_github.html">Github</a>
-        <a href="site_tools_msteams.html">MS Teams</a>
-      </div>
-    </div>
-    <a href="site_industrydata.html">Industry Data</a>
-    <a href="site_it-work.html">IT Work</a>
-    <div class="dropdown">
-      <button class="dropbtn">IT Technologies
-        <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-content">
-        <a href="site_it-tech_cloud.html">Cloud, Services & Servers</a>
-        <a href="site_it-tech_cyber.html">Cybersecurity</a>
-        <a href="site_it-tech_machine.html">Machine Learning</a>
-        <a href="site_it-tech_chatterbot.html">Natural Language processing and chatterbots</a>
-      </div>
-    </div>
-    <a href="site_projectideas.html">Project Ideas</a>
-    <a href="site_references.html">References</a>
-  </div>
-  <a id="1"></a>
-  <div class="content_dark">
-    <br>
-    <br>
-    <h1>References</h1>
+    <div class="right">
+      <div class="container_main">
+        <div class="title">
+          <h1>References</h1>
+        </div>
     <br>
     <br>
     <br>

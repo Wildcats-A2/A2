@@ -295,7 +295,7 @@ img.article {
 
 <head>
   <meta charset="utf-8">
-  <title>COSC1078 - Wildcats - Assignment 2: Ideal Jobs</title>
+  <title>COSC1078 - Wildcats - Assignment 2: ***INSERT PAGE HEADING***</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -354,39 +354,5 @@ img.article {
     <div class="right">
       <div class="container_main">
         <div class="title">
-          <h1>Ideal Jobs</h1>
+          <h1>***INSERT PAGE HEADING***</h1>
         </div>
-
-        </div>
-      </div>
-    </div>
-<script>
-  var link = document.getElementById("back-to-top");
-  var amountScrolled = 250;
-
-  window.addEventListener('scroll', function(e) {
-      if ( window.pageYOffset > amountScrolled ) {
-          link.classList.add('show');
-      } else {
-          link.className = 'back-to-top';
-      }
-  });
-<!-- Scrolls to Top -->
-  link.addEventListener('click', function(e) {
-      e.preventDefault();
-
-      var distance = 0 - window.pageYOffset;
-      var increments = distance/(500/16);
-      function animateScroll() {
-          window.scrollBy(0, increments);
-          if (window.pageYOffset <= document.body.offsetTop) {
-              clearInterval(runAnimation);
-          }
-      };
-      // Loop the animation function
-      var runAnimation = setInterval(animateScroll, 16);
-  });
-</script>
-
-</body>
-</html>
