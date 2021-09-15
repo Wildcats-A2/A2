@@ -2,18 +2,106 @@
 <html>
 <style>
 
-/* Menu Structure */
-
 body {
-  margin: 0;
-  font-size: 1em;
-  font-family: helvetica, sans-serif;
-  background-color: white;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 2px;
+  background: rgb(247,247,247);
+  background: radial-gradient(circle, rgba(247,247,247,1) 0%, rgba(255,255,255,1) 50%);
 }
+
+/* DIV, Containers and Articles */
+
+article {
+  width: 80%;
+  height: auto;
+  border-bottom: 1px solid grey;
+  box-shadow: 5px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+div.container {
+  display: flex;
+  width:inherit;
+  z-index: 0;
+  overflow: scroll;
+  padding: 1px;
+}
+div.container_main {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  z-index: 0;
+  overflow: scroll;
+  padding: 1px;
+  text-align: ;
+}
+div.left {
+  width:15vw;
+  height: 100vh;
+  overflow: visible;
+  float: left;
+  z-index: 10;
+}
+div.right {
+  width: 85vw;
+  overflow: scroll;
+  display: flex;
+  margin: ;
+  z-index: 1;
+}
+div.title {
+  margin-top: 20px;
+  padding: 0%;
+}
+
+div.footer {
+  height: auto;
+  border-top: 1px solid grey;
+  background-color: black;
+  display: flex;
+}
+
+/* Article Divs */
+div.article1 {
+  width: 100%;
+  height: 20%;
+  order: 1;
+  float: right;
+}
+div.article2 {
+  width: 80%;
+  height: 20%;
+  order: 2;
+}
+div.article3 {
+  width: 80%;
+  height: 20%;
+  order: 3;
+}
+div.article4 {
+  width: 80%;
+  height: 20%;
+  order: 4;
+}
+
+div.article_wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+div.img {
+  width: 220px;
+  justify-content: center;
+  margin: 15px;
+  float:left;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
 /* Back to top start */
 .back-to-top {
-  background: rgb(2,20,162);
-  background: linear-gradient(340deg, rgba(2,20,162,1) 0%, rgba(0,196,255,1) 100%);
+  background-color: mediumspringgreen;
   color: white;
   opacity: 0;
   transition: opacity .6s ease-in-out;
@@ -40,7 +128,7 @@ a.back-to-top {
 }
 
 .back-to-top:hover, .back-to-top:focus, .back-to-top:visited {
-  color: #FFFFFF;
+  color: slategray;
 }
 
 .back-to-top.show {
@@ -48,26 +136,30 @@ a.back-to-top {
 }
 /* Back to top end */
 
-/* navbar */
+/* navigation */
 .navbar {
-  overflow: hidden;
+  overflow: visible;
+  flex-direction: column;
+  box-shadow: 5px rgba(0,0,0,0.2);
   z-index: 10;
-  text-align: center;
-  justify-content: center;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+  text-align: left;
+  justify-content: space-around;
+  font-family: 'Open Sans', sans-serif;
+  min-width: 200px;
 }
 
 .navbar a {
   text-align: center;
   float: left;
-  font-size: 3vh;
-  color: white;
-  text-align: center;
+  font-size: 1.5vw;
+  color: slategrey;
+  text-align: left;
+  justify-content: center;
   padding: 14px 16px;
   text-decoration: none;
   box-shadow: 5px rgba(0,0,0,0.2);
+  min-width: 200px;
+  z-index: 10;
 }
 
 .dropdown {
@@ -76,36 +168,36 @@ a.back-to-top {
 }
 
 .dropdown .dropbtn {
-  font-size: 3vh;
+  font-size: 1.5vw;
   border: none;
   outline: none;
-  color: white;
+  color: slategrey;
   padding: 14px 16px;
   background-color: inherit;
-  font-family: inherit;
+  font-family: 'Open Sans', sans-serif;
   margin: 0;
 }
 .dropbtn {
   color: black;
 }
 .navbar a:hover, .dropdown:hover {
-  background-color: ;
-  color: black;
+  background-color:;
+  color: mediumspringgreen;
 }
 
 .dropdown-content {
   display: none;
-  position: absolute;
-  color: black;
+  position: ;
+  color: slategrey;
   background-color: white;
-  min-width: 160px;
+  min-width: 200px;
   box-shadow: 0px 8px 16px 10px rgba(0,0,0,0.2);
-  z-index: 1;
+  z-index: 11;
 }
 
 .dropdown-content a {
   float: none;
-  color: black;
+  color: slategrey;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -113,317 +205,170 @@ a.back-to-top {
 }
 
 .dropdown-content a:hover {
-  background-color: black;
-  color: white;
+  background-color: ;
+  color: mediumspringgreen;
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
 }
-/* Text and Font Formatting */
-header {
-  font-family: helvetica;
-  font-size: 5em;
-}
+
+/* Font Formatting */
 
 h1 {
-  font-family: arial;
-  color: black;
-  display: inline;
-  margin-left: ;
-  font-size: 5vw;
-  letter-spacing: 2px;
+  font-family: 'Open Sans', sans-serif;
+  color: slategray;
+  font-size: 7vh;
+  padding-left: 20px;
+  font-weight: bolder;
 }
-
 h2 {
-  font-family: helvetica;
-  color: grey;
-  margin-left: 10%;
+  font-family: 'Open Sans', sans-serif;
+  color: mediumspringgreen;
+  font-size: 3vh;
+  padding-left: 20px;
+  font-weight: bolder;
 }
 
 h3 {
-  font-family: helvetica;
-  color: white;
-  margin: 50px;
-}
-
-h4 {
-  font-family: helvetica;
-  color: white;
-  margin: 50px;
-}
-
-h5 {
-  font-family: helvetica;
+  font-family: 'Open Sans', sans-serif;
   color: grey;
-  display: inline;
-  margin: 50px;
-}
-h6 {
-  font-family: helvetica;
-  color: black;
-  display: inline;
-  margin: ;
-}
-/* Link Formatting */
-
-
-
-/* DIV Formatting */
-div.container {
-  background: rgb(2,20,162);
-  background: linear-gradient(340deg, rgba(2,20,162,1) 0%, rgba(0,196,255,1) 100%);
-  width:100%;
-  text-align: center;
-}
-
-
-div.title_center {
-  text-align: center;
-  margin-top: 5%;
-  margin-bottom: 5%;
-}
-
-div.content_center {
-  margin-left: 10%;
-  margin-right: 10%;
-}
-
-div.content_light {
-  width: 100%;
-  height:100%;
-  margin:auto;
-  background: white;
-
-}
-div.content_dark {
-  width: 100%;
-  height: 100%;
-  background: rgb(224,224,224);
-  background: linear-gradient(340deg, rgba(224,224,224,1) 0%, rgba(255,255,255,1) 50%);
-}
-
-
-/* Contents Formatting */
-
-strong {
-  word-wrap: break-word;
-}
-.content_wrap1 {
-  display: flex;
-  width: auto;
-  margin: 50px;
-}
-.content_wrap2 {
-  display: flex;
-  width: auto;
-  margin: 50px;
-}
-.content_wrap3 {
-  display: flex;
-  width: auto;
-  margin: auto;
-}
-.content_wrap4 {
-  display: flex;
-  width: auto;
-  margin: auto;
-}
-.column_left {
-  float: left;
-  flex: 1;
-  width: 20%;
-  padding: auto;
-  display: block;
-  margin: 0;
-}
-.column_right {
-  float: inherit;
-  width: 85%;
-  padding: auto;
-  display: block;
-  margin: auto;
-}
-
-.author {
-  float:left;
-  width:15%;
-  flex: 1;
-  padding: auto;
-  display: inline-block;
-  margin-top: 0%;
-}
-
-.row {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.image_left {
-  float: left;
-  flex: 1;
-  width: 20%;
-  padding: auto;
-  display: block;
-  margin: 0;
-  align-content: right;
-}
-
-.image_right {
-  float: right;
-  width: 30%;
-  padding: auto;
-  align-content: left;
-  display: block;
-  margin: 0 auto;
-}
-
-.text_left {
-  float: left;
-  flex: 1;
-  width: 60%;
-  padding: auto;
-}
-.text_right {
-  float: right;
-  width: 60%;
-  padding: auto;
+  font-size: 1.5vh;
+  padding-left: 20px;
+  font-weight: lighter;
 }
 
 p.heading {
-  font-family: arial;
-  font-size: 7vw;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 2em;
   color: black;
-  width: 80%;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-top: 0%;
-  margin-bottom: 0%;
+  margin-left: 5%;
   text-align: left;
   letter-spacing: 2px;
-  word-wrap: break-word;
-  text-shadow: 5px 5px 5px grey;
   line-height: 1;
+  font-weight: 900;
 }
 
 p.subheading {
-  font-family: arial;
-  font-size: 3.5vw;
-  color: grey;
-  margin-left: 5%;
-  margin-right: 5%;
-  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5vw;
+  color: black;
+  font-weight: bold;
+  margin-left: 10%;
+  margin-right: 10%;
+  text-align: left;
   text-justify: inter-word;
   letter-spacing: 2px;
 }
 p.body {
-  width:80%;
-  font-family: arial;
-  font-size: 18px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1em;
+  font-weight: lighter;
+  line-height: 1.6;
+  letter-spacing: 2px;
   color: grey;
   margin-left: 10%;
   margin-right: 10%;
-  text-align: body_left;
-  line-height: 1.6;
-
-  letter-spacing: 2px;
+  text-align: left;
+  justify-content: space-around;
 }
 
 ul {
-  font-family: arial;
-  font-size: 18px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: lighter;
+  font-size: 1em;
+  line-height: 1.6;
+  letter-spacing: 2px;
   color: grey;
   margin-left: 10%;
   margin-right: 10%;
   text-align: left;
-  letter-spacing: 2px;
-  line-height: 1.6;
+}
+/* IMG Formatting */
+
+img.logo {
+  max-width: 90%;
+}
+
+img.article {
+  width: 200px;
+  float: left;
+  justify-content:
+  display:inline-block;
+  vertical-align: middle;
 }
 
 img {
-  max-width: 100%;
-  opacity: 0.9;
-  overflow: hidden;
-}
-
-img.circle {
-  border-radius: 50%;
-  box-shadow: 0px 0px 10px 0px;
-}
-
-figcaption {
-  font-size: 0.7em;
-  text-align: left;
-  opacity: .5;
+  max-width: 80%;
+  height: auto;
 }
 
 </style>
 
 <head>
-<meta charset="utf-8">
-<title>COSC1078 - Wildcats - Assignment 2: Cybersecurity</title>
+  <meta charset="utf-8">
+  <title>COSC1078 - Wildcats - Assignment 2: What is Cybersecurity?</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <div class="container">
-  <a href="#" id="back-to-top" class="back-to-top" style="display: inline;">Top</a>
-
-    <a href="index.html">
-    <img style="height:50%;width:50%;" src="site/images/header_white.png">
-    </a>
-  <div class="navbar">
-    <div class="dropdown">
-      <button class="dropbtn">About the team
-        <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-content">
-        <a href="site_about.html">The Team</a>
-        <a href="site_about_team.html">Personality Profiles</a>
-        <a href="site_about_jobs.html">Ideal Jobs</a>
-        <a href="site_about_feedback.html">Feedback</a>
-        <a href="site_about_reflection.html">Group Reflection</a>
-      </div>
-    </div>
-    <div class="dropdown">
-      <button class="dropbtn">Tools
-        <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-content">
-        <a href="site_tools_github.html">Github</a>
-        <a href="site_tools_msteams.html">MS Teams</a>
-      </div>
-    </div>
-    <a href="site_industrydata.html">Industry Data</a>
-    <a href="site_it-work.html">IT Work</a>
-    <div class="dropdown">
-      <button class="dropbtn">IT Technologies
-        <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-content">
-        <a href="site_it-tech_cloud.html">Cloud, Services & Servers</a>
-        <a href="site_it-tech_cyber.html">Cybersecurity</a>
-        <a href="site_it-tech_machine.html">Machine Learning</a>
-        <a href="site_it-tech_chatterbot.html">Natural Language processing and chatterbots</a>
-      </div>
-    </div>
-    <a href="site_projectideas.html">Project Ideas</a>
-    <a href="site_references.html">References</a>
-  </div>
-</div>
-  <a id="1"></a>
-  <div class="content_dark">
-    <div class="content_center">
-    </div>
-      <div class="content_wrap1">
-        <div class="author">
-          <img class="circle" style="width:50%;" src="site/images/team/a1_profile_dan.JPG">
-          <p style="font-size:1em; color:darkslategrey;">
-            Article written by<br> <strong>Daniel Nanthathammiko S3196237</strong>
-          </p>
+    <a href="#" id="back-to-top" class="back-to-top" style="display: inline;">Top</a>
+    <div class="left">
+      <div class="navbar">
+        <a href="index.html">
+        <img class="logo" src="site/images/logo.png">
+        </a>
+        <div class="dropdown">
+          <button class="dropbtn">About the team
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="site_about.html">The Team</a>
+            <a href="site_about_team.html">Personality Profiles</a>
+            <a href="site_about_jobs.html">Ideal Jobs</a>
+            <a href="site_about_feedback.html">Feedback</a>
+            <a href="site_about_reflection.html">Group Reflection</a>
+          </div>
         </div>
-        <div class="column_right">
-          <p class="heading">What is Cybersecurity?</p>
+        <div class="dropdown">
+          <button class="dropbtn">Tools
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="site_tools_github.html">Github</a>
+            <a href="site_tools_msteams.html">MS Teams</a>
+          </div>
+        </div>
+        <a href="site_industrydata.html">Industry Data</a>
+        <a href="site_it-work.html">IT Work</a>
+        <div class="dropdown">
+          <button class="dropbtn">IT Technologies
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="site_it-tech_cloud.html">Cloud, Services & Servers</a>
+            <a href="site_it-tech_cyber.html">Cybersecurity</a>
+            <a href="site_it-tech_machine.html">Machine Learning</a>
+            <a href="site_it-tech_chatterbot.html">Natural Language processing and chatterbots</a>
+          </div>
+        </div>
+        <a href="site_projectideas.html">Project Ideas</a>
+        <a href="site_references.html">References</a>
+      </div>
+    </div>
+    <div class="right">
+      <div class="container_main">
+        <article>
+          <h1>What is Cybersecurity?</h1>
+          <h3>Article written by Daniel Nanthathammiko@S3196237</h3>
+          <img src="site/images/cybersecurity/terminal_window.png">
             <p class="body">
               What is Cybersecurity? Cybersecurity, also known as IT (Information Technology) Security is the act of securing networks and IT systems from threats, whether they are outside of systems or from within our workplaces, homes or somewhere in-between.
             </p>
@@ -436,7 +381,6 @@ figcaption {
             <p class="body">
               The technology at the heart of cybersecurity is guided by the threats at hand as cybersecurity isn’t implemented with a singular technology stack. It is a layered approach to fully protect our systems from threats that will occur on multiple layers. These layers can include:
               Infrastructure security of IT and sensitive data: Physically securing the premises to protect sensitive data from theft, damage, or loss. This could be locks on your doors with limited access, security systems such as alarms and surveillance. This level of security can be implemented at your workplace or home for reasonable costs and is the first thing to be implemented.<br><br>
-<img src="site/images/cybersecurity/terminal_window.png">
               As an example, at my workplace I have installed:
             </p>
             <p class="body">
@@ -447,10 +391,10 @@ figcaption {
                 <li>These measures ensure that physically, we will be able to protect our physical IT system and data stored at our premises. As the technology regarding surveillance and building security continues to grow in awareness and reduce in costs, there will no longer be any barriers to a secure physical location where data is stored for businesses of all sizes and for the home.</li>
               </ul>
             </p>
+          </article>
             <img src="site/images/cybersecurity/ring.png">
-            <div class="title_center">
-              <p class="subheading">Network Security</p>
-            </div>
+          <article>
+              <h2>Network Security</h2>
             <p class="body">
                 This is usually the first we would associate with cybersecurity. Protecting your internal networks (LAN) can be as simple as having passwords on all computers and devices that automatically connect to your intranet and only providing certain permissions to certain users and their devices. Other ways to protect your network can include:
             </p>
@@ -465,18 +409,16 @@ figcaption {
             <p class="body">
               As time goes on, routers and modems are becoming increasingly intelligent and cost effective when it comes to fully securing your LAN from attacks. Recently I purchased a Draytek modem with a built OpenVPN configuration to secure my home network as well as my work one. This is a layer ontop of a Synology NAS I have setup. The technology is still complicated if you want to extract all of the benefits being offered, however it is now within reach of many home users for securing networking and internet activities.
             </p>
-            <div class="title_center">
-              <p class="subheading">Application security</p>
-            </div>
+          </article>
+          <article>
+              <h2>Application security</h2>
               <p class="body">
                 As we utilise more conveniences online, Application Security has become increasingly urgent to ensure end user safety. Let’s take banking as an example, a large majority of Australians now use online banking on their phones or computers as it is incredibly convenient and instantaneous.
               </p>
               <p class="body">
                 The banks now provide significant protections to end users for two major reasons, to ensure the end user isn’t doing anything that will put themselves at risk but also to ensure banks minimise their liabilities such as an end user sending money to the wrong person or typing in their passwords into a phishing site.
               </p>
-              <div class="title_center">
                 <img style="width:50%" src="site/images/cybersecurity/2fa.png">
-              </div>
               <ul>
                 <li>Safety measures such as a message when sending money asking you to confirm the amount and to then type in a code to execute the transfer. This is to ensure that a) you are indeed wanting to send that value to that account and b) you are the account holder as you have the authorised device.</li>
                 <li>2 Factor Authentication (2FA) has become very standard to ensure that when you sign into and account, you are the account holder and have the approved device to execute the login.</li>
@@ -486,9 +428,9 @@ figcaption {
                 This doesn’t necessarily mean that it is full proof as there are ways to circumnavigate these protective measures if one is so inclined. You could port a SIM card if you have enough relevant details of a target which would then gain you 2FA if a phone number is being used.
                 This is changing though and is moving more towards using authenticator apps as the only way to beat this is to physically clone a phone, which would require physical access to the device, which would be too difficult and time consuming to do.
               </p>
-            <div class="title_center">
-              <p class="subheading">Cloud security</p>
-            </div>
+            </article>
+            <article>
+              <h2>Cloud security</h2>
               <p class="body">
                 The cloud has made our lives a lot easier to manage many aspects of our work and personal lives. I do take for granted the ease of working on multiple devices yet having all my work readily available and backed up. Encryption is the key here though as we require complete protection when we trust all our work and personal files, photos and documents to live online, free for exploitations and theft.
               </p>
@@ -501,9 +443,9 @@ figcaption {
                 Many providers of enterprise or commercial cloud services offer a high-level of cloud security as it is an expectation. As an example, Amazon Web Services offers “Strategic Security” under 4 main objectives, Prevent (user permissions and identities, infrastructure protection and data protection measures), Detect (visibility into your organization’s security posture with logging and monitoring services), Respond (Automated incident response and recovery to help shift the primary focus of security teams from response to analyzing root cause) and Remediate (Leverage event driven automation to quickly remediate and secure your AWS environment in near real-time).
               </p>
               <img src="site/images/cybersecurity/aws.png">
-              <div class="title_center">
-                <p class="subheading">End-user education</p>
-              </div>
+            </article>
+            <article>
+                <h2>End-user education</h2>
               <p class="body">
                 Education of best practice with IoT devices and computers connected to LAN with sensitive data is something that is the simplest thing to implement however is probably where most systems are exposed. Simple things such as reusing passwords or clicking on links and ads online can expose any home or work IT network to malicious attacks, exploits and data theft. In my experience I have educated my staff and colleagues:
               </p>
@@ -512,9 +454,7 @@ figcaption {
                 <li>Use ad blockers such as AdGaurd or U-Block Origin to remove anything that can expose our network when browsing online</li>
                 <li>Never to provide our main Wi-Fi password so that our systems are protected, it would be like handing the office keys to a random and allowing them to cut a key.</li>
               </ul>
-              <div class="title_center">
                 <img style="width:50%" src="site/images/cybersecurity/security_apps.png">
-              </div>
               <p class="body">
                 Many interfaces and devices themselves now make many attempts to secure systems and interactions with the online environment as secure as possible. This includes measures such as Safari and Chrome web browsers offering to provide strong, uniqgue passwords to protect your different online accounts from reusing passwords and login credentials in the event a leak occurs.
                 Mobile devices such as phones, tablets and laptops now have facial recognition or biometric logins.
@@ -538,9 +478,9 @@ figcaption {
               <p class="body">
                 We may see some redundancies in systems as cybersecurity grows with new technologies such as cloud services. Some redundancies include, iPhones dropping the home button which used to provide biometric login (via thumb print) and has now been replaced with a camera that can provide 3D facial recognition for login (Face ID). This has become standard for apps within the iOS ecosystem due to the secure nature of your face (in most cases) and has made passwords in this capacity redundant as the primary way to access the device however, we have seen difficulties in utilising facial recognition at all times due to masks (COVID).
               </p>
-              <div class="title_center">
                 <img style="width:50%" src="site/images/cybersecurity/face_id.png">
-              </div>
+              </article>
+              <article>
               <p class="body">
                 With advancements in cybersecurity and the heavy reliance we now require from this sector of IT, we will continue to see significant growth (as we have seen in IT, Programming etc) as there just aren’t enough people in this sector. This creates a reliance on the larger cybersecurity vendors and cloud services as they would employ a significant portion of this workforce. Searching Seek.com.au, there are currently 787 Cybersecurity jobs paying over $150,000 AUD. If you looked at the tech centre of the world, San Francisco there is approximately the same amount of Cybersecurity roles as we see in Australia with a USA national average pay of $190,000 AUD with pay soaring up over $300-400k AUD for very senior roles.
               </p>
@@ -564,8 +504,10 @@ figcaption {
               <p class="body">
                 I advocate to family and friends the simplicity of the measures I have taken and help them to utilise these same smarter and secure measures. I attempt to educate in basic internet street smarts to provide us (educate workmates for example) with a secure online life.
               </p>
-  </div>
-</div>
+            </article>
+          </div>
+        </div>
+      </div>
 <script>
   var link = document.getElementById("back-to-top");
   var amountScrolled = 250;
