@@ -16,6 +16,7 @@ article {
   height: auto;
   border-bottom: 1px solid grey;
   box-shadow: 5px rgba(0,0,0,0.2);
+  text-align: left;
 }
 
 div.container {
@@ -32,6 +33,7 @@ div.container_main {
   z-index: 0;
   overflow: scroll;
   padding: 1px;
+  text-align: ;
 }
 div.left {
   width:15vw;
@@ -89,11 +91,13 @@ div.article_wrapper {
 }
 
 div.img {
-  width:;
+  width: 220px;
   justify-content: center;
-  margin: 10%;
-  padding: 10%;
+  margin: 15px;
+
   float:left;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 
@@ -279,8 +283,10 @@ img.logo {
 
 img.article {
   width: 200px;
-  padding: 20px;
   float: left;
+  justify-content:
+  display:inline-block;
+  vertical-align: middle;
 }
 
 
@@ -349,40 +355,47 @@ img.article {
         <h1>Latest Articles</h1>
       </div>
         <article>
+        <div class="img">
           <img class="article" src="site/images/cybersecurity/terminal.png">
+        </div>
           <h2>What is Cybersecurity?</h2>
           <h3>Posted by Daniel Nanthathammiko@S3196237</h3>
           <p class="body">
-            What is Cybersecurity? Cybersecurity, also known as IT (Information Technology) Security is the act of securing networks and IT systems from threats, whether they are outside of systems or from within our workplaces, homes or somewhere in-between....<br>
+            What is Cybersecurity? Cybersecurity, also known as IT (Information Technology) Security is the act of securing networks and IT systems from threats...<br>
             <a href="site_it-tech_cyber.html">Read more here</a>
           </p>
         </article>
         <article>
+        <div class="img">
           <img class="article" src="site/images/cloud/cloud-computing.png">
+        </div>
           <h2>Cloud, Services & Servers</h2>
           <h3>Posted by Carisse Wu Pey Ann@S3886764</h3>
             <p class="body">
-              Clouds are servers that provide different services such as the running of software and applications, accessing and storing data virtually via the internet. This means that we do not have to rely on the physical hard disk to do these jobs....<br>
+              Clouds are servers that provide different services such as the running of software and applications, accessing and storing data virtually ...<br>
 
               <a href="site_it-tech_cloud.html">Read more here</a>
             </p>
         </article>
         <article>
+        <div class="img">
           <img class="article" src="site/images/NLP & Chatterbots/LSTM.png">
+        </div>
           <h2>Natural Language Processing and Chatterbots</h2>
           <h3>Posted by Braydan Shalders@S3781601</h3>
             <p class="body">
-              Natural Language Processing (NLP) is a part of the branch of computer science involving artificial intelligence that is concerned with giving computers the ability to understand speech and text, similarly to humans. The combination of the rule-based modeling....<br>
+              Natural Language Processing (NLP) is a part of the branch of computer science involving artificial intelligence that is concerned with giving computers the...<br>
 
               <a href="site_it-tech_chatterbot.html">Read more here</a>
             </p>
         </article>
         <article>
-          <img class="article" src="site/images/cybersecurity/terminal.png">
+          <div class="img">
+          <img class="article" src="site/images/cybersecurity/terminal.png"></div>
           <h2>Machine Learning</h2>
           <h3>Posted by Zhen Rong Xavier Tan@S3784659</h3>
           <p class="body">
-            Machine learning, as the name implies, is the ability for a machine to learn and notice patterns without any explicit programming. Elaborating on how this is done, machines are initially programmed with algorithms that allow them to analyse a particular set of....<br>
+            Machine learning, as the name implies, is the ability for a machine to learn and notice patterns without any explicit programming. Elaborating on how this is ...<br>
           <a href="site_it-tech_machine.html">Read more here</a>
           </p>
         </article>
