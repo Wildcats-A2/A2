@@ -9,10 +9,12 @@ body {
   background: radial-gradient(circle, rgba(247,247,247,1) 0%, rgba(255,255,255,1) 50%);
 }
 
+/* DIV, Containers and Articles */
+
 article {
   width: 80%;
   height: auto;
-  border-bottom: 1px grey;
+  border-bottom: 1px solid grey;
   box-shadow: 5px rgba(0,0,0,0.2);
 }
 
@@ -47,17 +49,15 @@ div.right {
 
 }
 div.title {
-
   margin-top: 20px;
   padding: 0%;
 }
 
 div.footer {
-  height: 100px;
+  height: auto;
   border-top: 1px solid grey;
   background-color: black;
   display: flex;
-
 }
 
 /* Article Divs */
@@ -90,16 +90,16 @@ div.article_wrapper {
 
 div.img {
   width:;
+  justify-content: center;
   margin: 10%;
-  padding: 0%
+  padding: 10%;
   float:left;
 }
 
 
 /* Back to top start */
 .back-to-top {
-  background: rgb(2,20,162);
-  background: linear-gradient(340deg, rgba(2,20,162,1) 0%, rgba(0,196,255,1) 100%);
+  background-color: mediumspringgreen;
   color: white;
   opacity: 0;
   transition: opacity .6s ease-in-out;
@@ -126,7 +126,7 @@ a.back-to-top {
 }
 
 .back-to-top:hover, .back-to-top:focus, .back-to-top:visited {
-  color: #FFFFFF;
+  color: slategray;
 }
 
 .back-to-top.show {
@@ -134,7 +134,7 @@ a.back-to-top {
 }
 /* Back to top end */
 
-/* navbar */
+/* navigation */
 .navbar {
   overflow: visible;
   flex-direction: column;
@@ -144,13 +144,14 @@ a.back-to-top {
   justify-content: space-around;
   font-family: 'Open Sans', sans-serif;
   min-width: 200px;
+
 }
 
 .navbar a {
   text-align: center;
   float: left;
   font-size: 1.5vw;
-  color: grey;
+  color: slategrey;
   text-align: left;
   justify-content: center;
   padding: 14px 16px;
@@ -169,7 +170,7 @@ a.back-to-top {
   font-size: 1.5vw;
   border: none;
   outline: none;
-  color: grey;
+  color: slategrey;
   padding: 14px 16px;
   background-color: inherit;
   font-family: 'Open Sans', sans-serif;
@@ -180,13 +181,13 @@ a.back-to-top {
 }
 .navbar a:hover, .dropdown:hover {
   background-color:;
-  color: black;
+  color: mediumspringgreen;
 }
 
 .dropdown-content {
   display: none;
   position: ;
-  color: black;
+  color: slategrey;
   background-color: white;
   min-width: 200px;
   box-shadow: 0px 8px 16px 10px rgba(0,0,0,0.2);
@@ -195,7 +196,7 @@ a.back-to-top {
 
 .dropdown-content a {
   float: none;
-  color: black;
+  color: slategrey;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -203,15 +204,38 @@ a.back-to-top {
 }
 
 .dropdown-content a:hover {
-  background-color: lightgrey;
-  color: white;
+  background-color: ;
+  color: mediumspringgreen;
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
+/* Font Formatting */
 
+h1 {
+  font-family: 'Open Sans', sans-serif;
+  color: slategray;
+  font-size: 7vh;
+  padding-left: 20px;
+  font-weight: bolder;
+}
+h2 {
+  font-family: 'Open Sans', sans-serif;
+  color: mediumspringgreen;
+  font-size: 3vh;
+  padding-left: 20px;
+  font-weight: bolder;
+}
+
+h3 {
+  font-family: 'Open Sans', sans-serif;
+  color: grey;
+  font-size: 1.5vh;
+  padding-left: 20px;
+  font-weight: lighter;
+}
 
 p.heading {
   font-family: 'Open Sans', sans-serif;
@@ -238,14 +262,14 @@ p.subheading {
 p.body {
   font-family: 'Open Sans', sans-serif;
   font-size: 1em;
+  font-weight: lighter;
+  line-height: 1.6;
+  letter-spacing: 2px;
   color: grey;
   margin-left: 10%;
   margin-right: 10%;
   text-align: left;
   justify-content: space-around;
-  line-height: 1.6;
-
-  letter-spacing: 2px;
 }
 
 /* IMG Formatting */
@@ -259,15 +283,13 @@ img.article {
   float: left;
 }
 
-h1 {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 7vh;
-  padding-left: 20px;
-  font-weight: bolder;
-}
+
 
 </style>
 <head>
+  <meta charset="utf-8">
+  <title>COSC1078 - Wildcats - Assignment 2: Latest Articles</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
@@ -328,43 +350,53 @@ h1 {
       </div>
         <article>
           <img class="article" src="site/images/cybersecurity/terminal.png">
-          <p class="subheading">What is Cybersecurity?</p>
+          <h2>What is Cybersecurity?</h2>
+          <h3>Posted by Daniel Nanthathammiko@S3196237</h3>
           <p class="body">
             What is Cybersecurity? Cybersecurity, also known as IT (Information Technology) Security is the act of securing networks and IT systems from threats, whether they are outside of systems or from within our workplaces, homes or somewhere in-between....<br>
-            <br>
             <a href="site_it-tech_cyber.html">Read more here</a>
           </p>
         </article>
         <article>
           <img class="article" src="site/images/cloud/cloud-computing.png">
-          <p class="subheading">Cloud, Services & Servers</p>
+          <h2>Cloud, Services & Servers</h2>
+          <h3>Posted by Carisse Wu Pey Ann@S3886764</h3>
             <p class="body">
               Clouds are servers that provide different services such as the running of software and applications, accessing and storing data virtually via the internet. This means that we do not have to rely on the physical hard disk to do these jobs....<br>
-              <br>
+
               <a href="site_it-tech_cloud.html">Read more here</a>
             </p>
         </article>
         <article>
           <img class="article" src="site/images/NLP & Chatterbots/LSTM.png">
-          <p class = "subheading">Natural Language Processing and Chatterbots</p>
+          <h2>Natural Language Processing and Chatterbots</h2>
+          <h3>Posted by Braydan Shalders@S3781601</h3>
             <p class="body">
               Natural Language Processing (NLP) is a part of the branch of computer science involving artificial intelligence that is concerned with giving computers the ability to understand speech and text, similarly to humans. The combination of the rule-based modeling....<br>
-              <br>
+
               <a href="site_it-tech_chatterbot.html">Read more here</a>
             </p>
         </article>
         <article>
           <img class="article" src="site/images/cybersecurity/terminal.png">
-          <p class="subheading">Machine Learning</p>
+          <h2>Machine Learning</h2>
+          <h3>Posted by Zhen Rong Xavier Tan@S3784659</h3>
           <p class="body">
             Machine learning, as the name implies, is the ability for a machine to learn and notice patterns without any explicit programming. Elaborating on how this is done, machines are initially programmed with algorithms that allow them to analyse a particular set of....<br>
-            <br>
-            <a href="site_it-tech_machine.html">Read more here</a>
+          <a href="site_it-tech_machine.html">Read more here</a>
           </p>
         </article>
         <div class="footer">
           <p class="body">
-            Testing
+            © 2021 Wildcats X RMIT<br>
+            Braydan Shalders@S3781601
+            Carisse Wu Pey Ann@S3886764
+            <br>
+            Daniel Nanthathammiko@S3196237
+            Glenn Tang@S3601278
+            <br>
+            Harmony Kloppenburg@S3658138
+            Zhen Rong Xavier Tan@S3784659
           </p>
         </div>
       </div>
