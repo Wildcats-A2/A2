@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<style>
+
+body {
+  font: arial;
+  letter-spacing: 2px;
+  background: rgb(224,224,224);
+  background: radial-gradient(circle, rgba(224,224,224,1) 0%, rgba(255,255,255,1) 100%);
+}
+
+div.container {
+  display: flex;
+  width:inherit;
+  z-index: 0;
+  overflow: scroll;
+  padding: 1px;
+}
+div.container_main {
+  display: flex;
+  flex-direction: column;
+  margin: ;
+  z-index: 0;
+  overflow: scroll;
+  padding: 1px;
+}
+div.left {
+  width:15%;
+  height: 100vh;
+  margin: ;
+  float: left;
+  z-index: 1;
+
+}
+div.right {
+  width: 85%;
+  overflow: scroll;
+  display: flex;
+  margin: ;
+  z-index: 1;
+
+}
+div.title {
+  margin:0%;
+  padding: 0%;
+}
+
+/* Article Divs */
+div.article1 {
+  width: 100%;
+  height: 20%;
+  order: 1;
+  float: right;
+}
+div.article2 {
+  width: 80%;
+  height: 20%;
+  order: 2;
+}
+div.article3 {
+  width: 80%;
+  height: 20%;
+  order: 3;
+}
+div.article4 {
+  width: 80%;
+  height: 20%;
+  order: 4;
+}
+
+div.article_wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+div.img {
+  width:;
+  margin: 10%;
+  padding: 0%
+  float:left;
+}
+
+
+/* Back to top start */
+.back-to-top {
+  background: rgb(2,20,162);
+  background: linear-gradient(340deg, rgba(2,20,162,1) 0%, rgba(0,196,255,1) 100%);
+  color: white;
+  opacity: 0;
+  transition: opacity .6s ease-in-out;
+  z-index: 999;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  width: 100px;
+  height: 100px;
+  box-sizing: border-box;
+  border-radius: 0;
+}
+
+a.back-to-top {
+  font-weight: 1000;
+  letter-spacing: 2px;
+  font-size: 1em;
+  text-transform: uppercase;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 1.6;
+  padding-left: 2px;
+  padding-top: 14px;
+}
+
+.back-to-top:hover, .back-to-top:focus, .back-to-top:visited {
+  color: #FFFFFF;
+}
+
+.back-to-top.show {
+  opacity: 1;
+}
+/* Back to top end */
+
+/* navbar */
+.navbar {
+  overflow: hidden;
+  box-shadow: 5px rgba(0,0,0,0.2);
+  z-index: 10;
+  text-align: left;
+  justify-content: space-around;
+  font-family: sans-serif;
+}
+
+.navbar a {
+  text-align: center;
+  float: left;
+  font-size: 1.5em;
+  color: grey;
+  text-align: center;
+  justify-content: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  box-shadow: 5px rgba(0,0,0,0.2);
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 1.5em;
+  border: none;
+  outline: none;
+  color: grey;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+.dropbtn {
+  color: black;
+}
+.navbar a:hover, .dropdown:hover {
+  background-color:;
+  color: black;
+}
+
+.dropdown-content {
+  display: none;
+  position: ;
+  color: black;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 10px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: lightgrey;
+  color: white;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+
+p.heading {
+  font-family: sans-serif;
+  font-size: 2em;
+  color: black;
+  margin-left: 5%;
+  text-align: left;
+  letter-spacing: 2px;
+  line-height: 1;
+  font-weight: 900;
+}
+
+p.subheading {
+  font-family: sans-serif;
+  font-size: 1.5vw;
+  color: black;
+  font-weight: bold;
+  margin-left: 10%;
+  margin-right: 10%;
+  text-align: left;
+  text-justify: inter-word;
+  letter-spacing: 2px;
+}
+p.body {
+  font-family: sans-serif;
+  font-size: 1em;
+  color: grey;
+  margin-left: 10%;
+  margin-right: 10%;
+  text-align: left;
+  justify-content: space-around;
+  line-height: 1.6;
+
+  letter-spacing: 2px;
+}
+
+/* IMG Formatting */
+img.logo {
+  max-width: 90%;
+}
+
+img.article {
+  width: 200px;
+  padding: 20px;
+  float: left;
+}
+
+</style>
+<head>
+</head>
+<body>
+<div class="container">
+  <a href="#" id="back-to-top" class="back-to-top" style="display: inline;">Top</a>
+  <div class="left">
+    <div class="navbar">
+      <a href="index.html">
+      <img class="logo" src="site/images/header_white.png">
+      </a>
+      <div class="dropdown">
+        <button class="dropbtn">About the team
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="site_about.html">The Team</a>
+          <a href="site_about_team.html">Personality Profiles</a>
+          <a href="site_about_jobs.html">Ideal Jobs</a>
+          <a href="site_about_feedback.html">Feedback</a>
+          <a href="site_about_reflection.html">Group Reflection</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Tools
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="site_tools_github.html">Github</a>
+          <a href="site_tools_msteams.html">MS Teams</a>
+        </div>
+      </div>
+      <a href="site_industrydata.html">Industry Data</a>
+      <a href="site_it-work.html">IT Work</a>
+      <div class="dropdown">
+        <button class="dropbtn">IT Technologies
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="site_it-tech_cloud.html">Cloud, Services & Servers</a>
+          <a href="site_it-tech_cyber.html">Cybersecurity</a>
+          <a href="site_it-tech_machine.html">Machine Learning</a>
+          <a href="site_it-tech_chatterbot.html">Natural Language processing and chatterbots</a>
+        </div>
+      </div>
+      <a href="site_projectideas.html">Project Ideas</a>
+      <a href="site_references.html">References</a>
+    </div>
+  </div>
+  <div class="right">
+    <div class="container_main">
+      <div class="title">
+        <p class="heading">Latest news!</p>
+      </div>
+        <article>
+          <img class="article" src="site/images/cybersecurity/terminal.png">
+          <p class="subheading">What is Cybersecurity?</p>
+          <p class="body">
+            What is Cybersecurity? Cybersecurity, also known as IT (Information Technology) Security is the act of securing networks and IT systems from threats, whether they are outside of systems or from within our workplaces, homes or somewhere in-between....<br>
+            <br>
+            <a href="site_it-tech_cyber.html">Read more here</a>
+          </p>
+        </article>
+        <article>
+          <img class="article" src="site/images/cloud/cloud-computing.png">
+          <p class="subheading">Cloud, Services & Servers</p>
+            <p class="body">
+              Clouds are servers that provide different services such as the running of software and applications, accessing and storing data virtually via the internet. This means that we do not have to rely on the physical hard disk to do these jobs....<br>
+              <br>
+              <a href="site_it-tech_cloud.html">Read more here</a>
+            </p>
+        </article>
+        <article>
+          <img class="article" src="site/images/NLP & Chatterbots/LSTM.png">
+          <p class = "subheading">Natural Language Processing and Chatterbots</p>
+            <p class="body">
+              Natural Language Processing (NLP) is a part of the branch of computer science involving artificial intelligence that is concerned with giving computers the ability to understand speech and text, similarly to humans. The combination of the rule-based modeling....<br>
+              <br>
+              <a href="site_it-tech_chatterbot.html">Read more here</a>
+            </p>
+        </article>
+        <article>
+          <img class="article" src="site/images/cybersecurity/terminal.png">
+          <p class="subheading">Machine Learning</p>
+          <p class="body">
+            Machine learning, as the name implies, is the ability for a machine to learn and notice patterns without any explicit programming. Elaborating on how this is done, machines are initially programmed with algorithms that allow them to analyse a particular set of....<br>
+            <br>
+            <a href="site_it-tech_machine.html">Read more here</a>
+          </p>
+        </article>
+      </div>
+    </div>
+    <script>
+      var link = document.getElementById("back-to-top");
+      var amountScrolled = 250;
+
+      window.addEventListener('scroll', function(e) {
+          if ( window.pageYOffset > amountScrolled ) {
+              link.classList.add('show');
+          } else {
+              link.className = 'back-to-top';
+          }
+      });
+    <!-- Scrolls to Top -->
+      link.addEventListener('click', function(e) {
+          e.preventDefault();
+
+          var distance = 0 - window.pageYOffset;
+          var increments = distance/(500/16);
+          function animateScroll() {
+              window.scrollBy(0, increments);
+              if (window.pageYOffset <= document.body.offsetTop) {
+                  clearInterval(runAnimation);
+              }
+          };
+          // Loop the animation function
+          var runAnimation = setInterval(animateScroll, 16);
+      });
+
+    </script>
+</body>
+</html>
