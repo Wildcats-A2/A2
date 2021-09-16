@@ -2,18 +2,108 @@
 <html>
 <style>
 
-/* Menu Structure */
-
 body {
-  margin: 0;
-  font-size: 1em;
-  font-family: helvetica, sans-serif;
-  background-color: white;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 2px;
+  background: rgb(247,247,247);
+  background: radial-gradient(circle, rgba(247,247,247,1) 0%, rgba(255,255,255,1) 50%);
 }
+
+/* DIV, Containers and Articles */
+
+article {
+  width: 80%;
+  height: auto;
+  border-bottom: 1px solid grey;
+  box-shadow: 5px rgba(0,0,0,0.2);
+  text-align: left;
+}
+
+div.container {
+  display: flex;
+  width:inherit;
+  z-index: 0;
+  overflow: scroll;
+  padding: 1px;
+}
+div.container_main {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  z-index: 0;
+  overflow: scroll;
+  padding: 1px;
+  text-align: ;
+}
+div.left {
+  width:15vw;
+  height: 100vh;
+  overflow: visible;
+  float: left;
+  z-index: 10;
+}
+div.right {
+  width: 85vw;
+  overflow: scroll;
+  display: flex;
+  margin: ;
+  z-index: 1;
+
+}
+div.title {
+  margin-top: 20px;
+  padding: 0%;
+}
+
+div.footer {
+  height: auto;
+  border-top: 1px solid grey;
+  background-color: black;
+  display: flex;
+}
+
+/* Article Divs */
+div.article1 {
+  width: 100%;
+  height: 20%;
+  order: 1;
+  float: right;
+}
+div.article2 {
+  width: 80%;
+  height: 20%;
+  order: 2;
+}
+div.article3 {
+  width: 80%;
+  height: 20%;
+  order: 3;
+}
+div.article4 {
+  width: 80%;
+  height: 20%;
+  order: 4;
+}
+
+div.article_wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+div.img {
+  width: 220px;
+  justify-content: center;
+  margin: 15px;
+
+  float:left;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
 /* Back to top start */
 .back-to-top {
-  background: rgb(2,20,162);
-  background: linear-gradient(340deg, rgba(2,20,162,1) 0%, rgba(0,196,255,1) 100%);
+  background-color: mediumspringgreen;
   color: white;
   opacity: 0;
   transition: opacity .6s ease-in-out;
@@ -40,7 +130,7 @@ a.back-to-top {
 }
 
 .back-to-top:hover, .back-to-top:focus, .back-to-top:visited {
-  color: #FFFFFF;
+  color: slategray;
 }
 
 .back-to-top.show {
@@ -48,27 +138,31 @@ a.back-to-top {
 }
 /* Back to top end */
 
-/* navbar */
+/* navigation */
 .navbar {
-  overflow: hidden;
-  background: rgb(2,20,162);
-  background: linear-gradient(340deg, rgba(2,20,162,1) 0%, rgba(0,196,255,1) 100%);
+  overflow: visible;
+  flex-direction: column;
   box-shadow: 5px rgba(0,0,0,0.2);
   z-index: 10;
-  text-align: center;
-  justify-content: center;
+  text-align: left;
+  justify-content: space-around;
+  font-family: 'Open Sans', sans-serif;
+  min-width: 200px;
+
 }
 
 .navbar a {
   text-align: center;
   float: left;
-  font-size: 2em;
-  color: white;
-  text-align: center;
+  font-size: 1.5vw;
+  color: slategrey;
+  text-align: left;
   justify-content: center;
   padding: 14px 16px;
   text-decoration: none;
   box-shadow: 5px rgba(0,0,0,0.2);
+  min-width: 200px;
+  z-index: 10;
 }
 
 .dropdown {
@@ -77,36 +171,36 @@ a.back-to-top {
 }
 
 .dropdown .dropbtn {
-  font-size: 2em;
+  font-size: 1.5vw;
   border: none;
   outline: none;
-  color: white;
+  color: slategrey;
   padding: 14px 16px;
   background-color: inherit;
-  font-family: inherit;
+  font-family: 'Open Sans', sans-serif;
   margin: 0;
 }
 .dropbtn {
   color: black;
 }
 .navbar a:hover, .dropdown:hover {
-  background-color: ;
-  color: black;
+  background-color:;
+  color: mediumspringgreen;
 }
 
 .dropdown-content {
   display: none;
-  position: absolute;
-  color: black;
+  position: ;
+  color: slategrey;
   background-color: white;
-  min-width: 160px;
+  min-width: 200px;
   box-shadow: 0px 8px 16px 10px rgba(0,0,0,0.2);
-  z-index: 1;
+  z-index: 11;
 }
 
 .dropdown-content a {
   float: none;
-  color: black;
+  color: slategrey;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -114,262 +208,313 @@ a.back-to-top {
 }
 
 .dropdown-content a:hover {
-  background-color: black;
-  color: white;
+  background-color: ;
+  color: mediumspringgreen;
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
 }
-/* Text and Font Formatting */
+
+/* Font Formatting */
 
 h1 {
-  font-family: helvetica;
-  color: black;
-  display: inline;
-  margin-left: 10%;
-  font-size: 5vw;
+  font-family: 'Open Sans', sans-serif;
+  color: slategray;
+  font-size: 7vh;
+  padding-left: 20px;
+  font-weight: bolder;
 }
-
 h2 {
-  font-family: helvetica;
-  color: grey;
-  margin-left: 10%;
+  font-family: 'Open Sans', sans-serif;
+  color: mediumspringgreen;
+  font-size: 3vh;
+  padding-left: 20px;
+  font-weight: bolder;
 }
 
 h3 {
-  font-family: helvetica;
-  color: white;
-  margin: 50px;
-}
-
-h4 {
-  font-family: helvetica;
-  color: white;
-  margin: 50px;
-}
-
-h5 {
-  font-family: helvetica;
+  font-family: 'Open Sans', sans-serif;
   color: grey;
-  display: inline;
-  margin: 50px;
-}
-h6 {
-  font-family: helvetica;
-  color: black;
-  display: inline;
-  margin: ;
-}
-/* Link Formatting */
-
-
-
-/* DIV Formatting */
-
-div.title_center {
-  text-align: center;
+  font-size: 1.5vh;
+  padding-left: 20px;
+  font-weight: lighter;
 }
 
-div.content_center {
-  margin-left: 10%;
-  margin-right: 10%;
-}
-
-div.content_light {
-  width: 100%;
-  height:100%;
-  margin:auto;
-  background: white;
-
-}
-div.content_dark {
-  width: 100%;
-  height: 100vh;
-  background: rgb(224,224,224);
-  background: linear-gradient(340deg, rgba(224,224,224,1) 0%, rgba(255,255,255,1) 50%);
-}
-
-
-/* Contents Formatting */
-
-strong {
-  word-wrap: break-word;
-}
-.content_wrap1 {
-  display: flex;
-  width: auto;
-  margin: 50px;
-}
-.content_wrap2 {
-  display: flex;
-  width: auto;
-  margin: 50px;
-}
-.content_wrap3 {
-  display: flex;
-  width: auto;
-  margin: auto;
-}
-.content_wrap4 {
-  display: flex;
-  width: auto;
-  margin: auto;
-}
-.column_left {
-  float: left;
-  flex: 1;
-  width: 45%;
-  padding: auto;
-  display: block;
-  margin: 0 auto;
-}
-.column_right {
-  float: right;
-  width: 45%;
-  padding: auto;
-  display: block;
-  margin: 0 auto;
-}
-.row {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.image_left {
-  float: left;
-  flex: 1;
-  width: 30%;
-  padding: auto;
-  display: block;
-  margin: 0 auto;
-  align-content: right;
-}
-
-.image_right {
-  float: right;
-  width: 30%;
-  padding: auto;
-  align-content: left;
-  display: block;
-  margin: 0 auto;
-}
-
-.text_left {
-  float: left;
-  flex: 1;
-  width: 60%;
-  padding: auto;
-}
-.text_right {
-  float: right;
-  width: 60%;
-  padding: auto;
-}
-p.body {
-  font-family: helvetica;
+p.heading {
+  font-family: 'Open Sans', sans-serif;
   font-size: 2em;
   color: black;
-  margin-left: 20%;
-  margin-right: 20%;
-  text-align: justify;
-  text-justify: inter-word;
-}
-
-p.body_light {
-  font-family: helvetica;
-  font-size: 0.8em;
-  color: black;
-  margin: 20%;
-  text-align: justify;
-  text-justify: inter-word;
-}
-
-p.body_left {
-  font-family: helvetica;
-  font-size: 0.7em;
-  color: black;
-  margin: 50px;
-  text-align: ;
-}
-
-ul {
-  font-family: helvetica;
-  font-size: 0.8em;
-  color: White;
-  margin-left: 35px;
+  margin-left: 5%;
   text-align: left;
+  letter-spacing: 2px;
+  line-height: 1;
+  font-weight: 900;
 }
 
-img {
-  max-width: 100%;
-  opacity: 0.9;
-  overflow: hidden;
-  z-index: -10;
-}
-
-figcaption {
-  font-size: 0.7em;
+p.subheading {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5vw;
+  color: black;
+  font-weight: bold;
+  margin-left: 10%;
+  margin-right: 10%;
   text-align: left;
-  opacity: .5;
+  text-justify: inter-word;
+  letter-spacing: 2px;
 }
+p.body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1em;
+  font-weight: lighter;
+  line-height: 1.6;
+  letter-spacing: 2px;
+  color: grey;
+  margin-left: 10%;
+  margin-right: 10%;
+  text-align: left;
+  justify-content: space-around;
+}
+
+/* IMG Formatting */
+img.logo {
+  max-width: 90%;
+}
+
+img.article {
+  width: 200px;
+  margin-left: 10%;
+  margin-right: 2%;
+  margin-bottom: 1%;
+  float: left;
+  justify-content:
+  display:inline-block;
+  vertical-align: middle;
+}
+
+
 
 </style>
 
 <head>
-<meta charset="utf-8">
-<title>COSC1078 - Wildcats - Assignment 2: IT Work</title>
+  <meta charset="utf-8">
+  <title>COSC1078 - Wildcats - Assignment 2: IT WORK </title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <a href="#" id="back-to-top" class="back-to-top" style="display: inline;">Top</a>
-  <div class="navbar">
-    <a href="index.html">
-    <img style="height:50%;width:50%;" src="site/images/header_white.png">
-    </a>
-    <div class="dropdown">
-      <button class="dropbtn">About the team
-        <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-content">
-        <a href="site_about.html">The Team</a>
-        <a href="site_about_team.html">Personality Profiles</a>
-        <a href="site_about_jobs.html">Ideal Jobs</a>
-        <a href="site_about_feedback.html">Feedback</a>
-        <a href="site_about_reflection.html">Group Reflection</a>
+  <div class="container">
+    <a href="#" id="back-to-top" class="back-to-top" style="display: inline;">Top</a>
+    <div class="left">
+      <div class="navbar">
+        <a href="index.html">
+        <img class="logo" src="site/images/logo.png">
+        </a>
+        <div class="dropdown">
+          <button class="dropbtn">About the team
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="site_about.html">The Team</a>
+            <a href="site_about_team.html">Personality Profiles</a>
+            <a href="site_about_jobs.html">Ideal Jobs</a>
+            <a href="site_about_feedback.html">Feedback</a>
+            <a href="site_about_reflection.html">Group Reflection</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Tools
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="site_tools_github.html">Github</a>
+            <a href="site_tools_msteams.html">MS Teams</a>
+          </div>
+        </div>
+        <a href="site_industrydata.html">Industry Data</a>
+        <a href="site_it-work.html">IT Work</a>
+        <div class="dropdown">
+          <button class="dropbtn">IT Technologies
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="site_it-tech_cloud.html">Cloud, Services & Servers</a>
+            <a href="site_it-tech_cyber.html">Cybersecurity</a>
+            <a href="site_it-tech_machine.html">Machine Learning</a>
+            <a href="site_it-tech_chatterbot.html">Natural Language processing and chatterbots</a>
+          </div>
+        </div>
+        <a href="site_projectideas.html">Project Ideas</a>
+        <a href="site_references.html">References</a>
       </div>
     </div>
-    <div class="dropdown">
-      <button class="dropbtn">Tools
-        <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-content">
-        <a href="site_tools_github.html">Github</a>
-        <a href="site_tools_msteams.html">MS Teams</a>
+    <div class="right">
+      <div class="container_main">
+        <div class="title">
+          <h1>IT WORK</h1>
+        </div>
+      <div>
+        <h2>What’s it like being a junior software developer at NAB?</h2>
+        <p class="body">
+          <strong>Find out for yourself, as we interview Kai Zhi Lam.</strong>  
+        </p>
+        <img class= "article" src="site/images/interview_photo.jpg" alt="a photo of Mr Lam smiling at work" >
+        <p class="body">
+          Watch the full interview here: <a href="https://web.microsoftstream.com/video/42876cb4-2d5e-498c-9c83-c72e8963816a">https://web.microsoftstream.com/video/42876cb4-2d5e-498c-9c83-c72e8963816a</a>
+        </p>
+        <p class="body">
+          Full Transcript can be found here: <a href="https://rmiteduau.sharepoint.com/:w:/r/sites/COSC1078Assessment2TeamProjectW230-NAME5/Shared%20Documents/A2%20-%20IT%20Work/transcription%20and%20qs.docx?d=w4e62ad9aec484ba9a81952e6c0e50682&csf=1&web=1&e=bqLCSM  ">https://rmiteduau.sharepoint.com/:w:/r/sites/COSC1078Assessment2TeamProjectW230-NAME5/Shared%20Documents/A2%20-%20IT%20Work/transcription%20and%20qs.docx?d=w4e62ad9aec484ba9a81952e6c0e50682&csf=1&web=1&e=bqLCSM</a>
+        </p>
+        <p class="body">
+          <strong>Background information:</strong></p>
+        <p class="body">
+            Mr Lam is a friend of Wildcat’s Harmony, they graduated high school together in 2016 and stayed in touch throughout the years. He first started coding in year 8 and over the years kept learning as a hobby. He graduated from Deakin University in October 2020, finishing off his degree with an internship at NAB. Through this internship he proved himself to be an asset and in December 2020 NAB took him on as a full time employee.</p>
+  
+        <p class="body">
+          <strong>Did he have any prior experience before his internship / job?</strong> </p>
+        <p class="body">
+          “I've got side projects, basically it's what I do in my free time... I don't have any working experience... any IT related working experience before my internship. But I just like coding so I just do it in my free time... I guess that sort of helps you know, learning different languages” (KZ Lam, interview, September 11, 2021) </p>
+        
+        <p class="body">
+          <strong>What are his technical qualifications? </strong> </p>
+        <p class="body">
+          “I do not have any extra technical qualification besides my degree.” (KZ Lam, interview, September 11, 2021) </p>
+        
+        <p class="body">
+          <strong>What does it mean in the real world though? </strong> </p>
+        <p class="body">
+          “Everyone has a degree in that field... what sets you off from the others is basically your other qualities, so other qualifications like AWS or I think Google Cloud or something like that.”  </p>
+          <p class="body">“It's personal preference, if you wanna take it, you can. It's good to take as well. I remember speaking with one of my senior dev about it. He told me... I should only take it if my job needs it… He told me that he's seen people who took them like the AWS course and the test. And they don't know anything. So yeah, it's just all book smart, and it's not like proper real life technical (skills).”</p>
+          <p class="body">“Currently a lot of tech companies… have to always go through a coding test.” </p>
+          <p class="body">“When you go through a coding test, that's how you how they… filter out people, who is bad at coding versus people good at coding.”  </p>
+          <p class="body">KZ Lam, interview, September 11, 2021) </p>
+        
+        <p class="body">
+          <strong>What does he do now? </strong> </p>
+        <p class="body">
+          “I'm a software developer… I manage the credit card and personal loan forms. So when I say forms that means the front end side of things. A day to day is basically just a bunch of coding and meetings… So the coding aspect of it is basically just developing a component or something that business needs and or they require... We also go to meetings with business to gather requirements in order to build those components… I also do a little bit of production support so when there's an incident in production which is where a customer has an incident with our forms... I'll be the one that's fixing it.” (KZ Lam, interview, September 11, 2021) </p>
+        
+        <p class="body">
+          <strong>What other kinds of work does he do?  </strong> </p>
+        <p class="body">
+           “As I mentioned… we do production support so any defects there is, it comes back to us... once we create a product we have to also maintain it and make sure nothing goes wrong with it or if there's something goes wrong. We have to fix it as well.”   (KZ Lam, interview, September 11, 2021) </p>
+        
+        <p class="body">
+          <strong>Which aspects of work does he spend most of his time on?  </strong> </p>
+        <p class="body">
+          “Depending on the day, actually so right now… currently we are actually doing what we call is a hypercare where we 'cause two weeks ago we actually release a product. So Hyper care is… the time where we actually keep an eye like we keep a close eye on that specific product to see if there's any defects like being raised.”  </p>
+        <p class="body">
+          “That takes priority over everything else. So if there's a problem, it comes back to us. We fix it… the reason why we're doing this is just because that we've released a product pretty recently... but in day to day we don't really (focus on that aspect)”  </p>
+        <p class="body">
+          “Right now it's like 70. I think like 80% of our squad, you know, full on hypercare mode.”  (KZ Lam, interview, September 11, 2021) </p>
+        
+        <p class="body">
+          <strong>Who does he work with? </strong> </p>
+        <p class="body">
+          “A bunch of people. So at the start before anything we talk to the product owner, which is the person who... owns this... We gathered their requirements and we also talked to the, UI people and the designers, they they give us the design to build and we also talk to a11y which is the accessibility people. So to make sure that everything is in line according to the accessibility requirements… then once we're done talking… we got all the requirements. Then we start you know coding, building any components that they need.” (KZ Lam, interview, September 11, 2021) </p>
+        
+        <p class="body">
+          <strong>Clans? Tribes? Spotify? </strong> </p>
+        <p class="body">
+          “They call it Agile software development. It's sort of like a model developed by Spotify, where you work in a small group of people... everything is easier to manage”  </p>
+        <p class="body">
+          “Multiple squad makes up of a tribe. So right now I'm in the... forms tribe, so the digital forms tribe and then within the digital forms tribe has got multiple squads and I am in the personal loan and credit cards, squad” </p>
+        <p class="body">
+          “So the other teams that's not related to forms at all… especially if we use their services. So an an example would be a form. So once the user fills out everything, we actually have to send that data to the back end and they are the ones thats having to you know, determine whether the users are eligible for a personal loan, home loan or whatever... Basically that they're the downstream services… We have to interact with them when something goes wrong, especially during defects. A lot defects is because our services doesn't talk to their services nicely and things go wrong”  </p>
+        <p class="body">
+          “Generally like you would have a couple of contacts within different teams… so like this team you might have this person for a contact for it. So like whenever a problem comes up you just talk to that person… they would actually let their whole team know.”  </p>
+        <p class="body">
+          “An example would be… what we call a system environment testing where we test the components internally before we go live… So we have testers and they are the one that does all testing and then... whenever there's a defect it comes back to us.”  </p>
+        <p class="body">
+          (KZ Lam, interview, September 11, 2021) </p>
+
+        <p class="body">
+          <strong>How many people are in your squad? </strong> </p>
+        <p class="body">
+          “I think six or seven people”   </p>
+        <p class="body">
+          “Another senior dev is on, is currently on maternity leave… Only two senior devs and we've got… four juniors.”  </p>
+        <p class="body">
+          (KZ Lam, interview, September 11, 2021) </p>
+        
+        <p class="body">
+          <strong>Which aspects does he find most challenging?  </strong> </p>
+        <p class="body">
+          “It's hard to answer that 'cause like you obviously learn everything… you learn something new everyday, so something might be challenging at the start, but then at the end it turns out it's like super easy.”  (KZ Lam, interview, September 11, 2021). </p>
+        
+        <p class="body">
+          <strong>What does he turn to when troubleshooting and solving a problem?  </strong> </p>
+        <p class="body">
+          “Defects… The most helpful thing is for the tests to… tell us exactly what they've done to... generate that bug. Literally, if you want to become a tester, that's what you should do… that actually makes our life easier.”  </p>
+        <p class="body">
+          “Creating components… most helpful thing would be if you can't really do something. I reckon your co-workers… they have got like a fresh set of (eyes)” </p>
+        <p class="body">
+          “You could go approach this problem in like from this this direction instead. And you're like, Oh yeah, you're right.”  </p>
+        <p class="body">
+          (KZ Lam, interview, September 11, 2021). </p>
+
+        <p class="body">
+          <strong>Where does he see his IT career going in the next five years?   </strong> </p>
+        <p class="body">
+          “hopefully senior dev” </p>
+        <p class="body">
+          “So right now I'm actually planning on… a senior position… I'm working my way towards that. I still want to be a full stack engineer. That means you are able to… do stuff on the front end, back, end and Dev OPS. So literally one man army. So if you want to create a product you can actually do it all by yourself.” </p>
+        <p class="body">
+          “A lot of senior devs, they're actually full stacks… in my team, even though my senior dev is a front end developer, she's actually a full stack, so she knows how things work on front end, back end, and the DevOps side… It doesn't say that's a requirement on paper, but it is what's expected to be a senior dev.”  </p>
+        <p class="body">
+          (KZ Lam, interview, September 11, 2021). </p>
+        
+        <p class="body">
+          <strong>What was that atmosphere of your place of employment like? What has it been like during “COVID”?  </strong> </p>
+        <p class="body">
+          “When I was still in the office... I think we were in level 9? And we have... this corner area where it belongs to the forms tribe and then our squad would have... I think two or three sets of tables to work on”  </p>
+        <p class="body">
+          “There's no seating arrangement or anything you can, you can literally go up to level 12 to work there if you want to”  </p>
+        <p class="body">
+          “It's pretty chill, especially if you got good co-workers and a good team… We have team lunches every day. You know, just in the office... And every second Friday we would actually go out into the city. To have like… 2-3 hours lunch.” </p>
+        <p class="body">
+          “I remember my longest lunch... We had Parmas for lunch… We had to actually take the train to go to get lunch. So once we got lunch we actually walked all the way to Chinatown to get bubble tea... we walked all the way back to the office. And like by the time we got back to office is like 3:30.”  </p>
+        <p class="body">
+          (KZ Lam, interview, September 11, 2021) </p>
+        
+        <p class="body">
+          <strong>Does he miss it?     </strong> </p>
+        <p class="body">
+          “You do. But I mean now you get to stay at home so…”   (KZ Lam, interview, September 11, 2021) </p>
+        <p class="body">
+          “Pros and cons to both”  (H Kloppenburg, interview, September 11, 2021).  </p>
+        
+        <p class="body">
+          <strong>What is the project he's most proud of, and what was your contribution? </strong> </p>
+        <p class="body">
+          “This project is called Save Retrieve where we allow the customer to save where they left off and then resume in a later date and their data would still be present... I was one of the main contributors for what we call a app tracker. So when the customer fills out the personal information halfway they exited the form. They have to go into some sort of like a… website to click on, you know to resume their form… That's the website. It's actually live. Now if you want to check it out on nab.com dot AU. It's called App Tracker… So that's the project that I contributed… the most… The main thing that I'm really, really proud of. 'cause I know how everything works under the hood”   (KZ Lam, interview, September 11, 2021). </p>
+        
+        <p class="body">
+          <strong>Summary: </strong> </p>
+        <p class="body">
+          So what does day-to-day look like being a junior software developer at NAB? </p>
+        <p class="body">
+          Well, it really depends on what the priority is. Some days, other aspects are higher on the list, while others can be pushed back. For example, after a recent launch of an initiative, the squad goes into “hyper care” mode, where if any issues are raised, they try to fix the problem ASAP.  </p>
+        <p class="body">
+          A junior software developer would be expected to perform a range of tasks from creating / maintaining components, production support and interacting with a variety of people. Communication between other tribes and squads is a vital component needed to make things run smoothly.   </p>
+        <p class="body">
+          Mr Lam doesn’t describe certain tasks/aspects as challenging, because with anything new, there’s always a learning curve and hurdle to get over. Once you’ve learnt it, sometimes you’ll realise how simple the concept is. However, when faced with a challenge, it’s most helpful to turn to your team.Getting a new perspective can be very helpful when feeling stuck.  </p>
+        <p class="body">
+          The workplace atmosphere has drastically changed in recent years. The necessary restrictions in Victoria have led to Mr Lam working from home. While he states that there are positives to working remotely, he still misses company / team lunches.  </p>
+        <p class="body">
+          For the future? Mr Lam plans on further developing his skills, to be a full stack developer and then, hopefully, a senior dev. </p> <br><br> 
+
+        <p class="body"><strong><em> Thank you for your time Mr Lam, we all really appreciate you taking some time out of your Saturday evening and giving us a glimpse of what a day-to-day for you looks like.         
+        </em></strong></p>
+        
+
       </div>
-    </div>
-    <a href="site_industrydata.html">Industry Data</a>
-    <a href="site_it-work.html">IT Work</a>
-    <div class="dropdown">
-      <button class="dropbtn">IT Technologies
-        <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-content">
-        <a href="site_it-tech_cloud.html">Cloud, Services & Servers</a>
-        <a href="site_it-tech_cyber.html">Cybersecurity</a>
-        <a href="site_it-tech_machine.html">Machine Learning</a>
-        <a href="site_it-tech_chatterbot.html">Natural Language processing and chatterbots</a>
-      </div>
-    </div>
-    <a href="site_projectideas.html">Project Ideas</a>
-    <a href="site_references.html">References</a>
-  </div>
-  <a id="1"></a>
-  <div class="content_dark">
-    <br>
-    <br>
-    <h1>IT Work</h1>
     <br>
     <br>
     <br>
