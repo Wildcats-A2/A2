@@ -1,19 +1,108 @@
+
 <!DOCTYPE html>
 <html>
 <style>
 
-/* Menu Structure */
-
 body {
-  margin: 0;
-  font-size: 1em;
-  font-family: helvetica, sans-serif;
-  background-color: white;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 2px;
+  background: rgb(247,247,247);
+  background: radial-gradient(circle, rgba(247,247,247,1) 0%, rgba(255,255,255,1) 50%);
 }
+
+/* DIV, Containers and Articles */
+
+article {
+  width: 80%;
+  height: auto;
+  border-bottom: 1px solid grey;
+  box-shadow: 5px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+div.container {
+  display: flex;
+  width:inherit;
+  z-index: 0;
+  overflow: scroll;
+  padding: 1px;
+}
+div.container_main {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  z-index: 0;
+  overflow: scroll;
+  padding: 1px;
+  text-align: ;
+}
+div.left {
+  width:15vw;
+  height: 100vh;
+  overflow: visible;
+  float: left;
+  z-index: 10;
+}
+div.right {
+  width: 85vw;
+  overflow: scroll;
+  display: flex;
+  margin: ;
+  z-index: 1;
+}
+div.title {
+  margin-top: 20px;
+  padding: 0%;
+}
+
+div.footer {
+  height: auto;
+  border-top: 1px solid grey;
+  background-color: black;
+  display: flex;
+}
+
+/* Article Divs */
+div.article1 {
+  width: 100%;
+  height: 20%;
+  order: 1;
+  float: right;
+}
+div.article2 {
+  width: 80%;
+  height: 20%;
+  order: 2;
+}
+div.article3 {
+  width: 80%;
+  height: 20%;
+  order: 3;
+}
+div.article4 {
+  width: 80%;
+  height: 20%;
+  order: 4;
+}
+
+div.article_wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+div.img {
+  width: 220px;
+  justify-content: center;
+  margin: 15px;
+  float:left;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
 /* Back to top start */
 .back-to-top {
-  background: rgb(2,20,162);
-  background: linear-gradient(340deg, rgba(2,20,162,1) 0%, rgba(0,196,255,1) 100%);
+  background-color: mediumspringgreen;
   color: white;
   opacity: 0;
   transition: opacity .6s ease-in-out;
@@ -40,7 +129,7 @@ a.back-to-top {
 }
 
 .back-to-top:hover, .back-to-top:focus, .back-to-top:visited {
-  color: #FFFFFF;
+  color: slategray;
 }
 
 .back-to-top.show {
@@ -48,27 +137,30 @@ a.back-to-top {
 }
 /* Back to top end */
 
-/* navbar */
+/* navigation */
 .navbar {
-  overflow: hidden;
-  background: rgb(2,20,162);
-  background: linear-gradient(340deg, rgba(2,20,162,1) 0%, rgba(0,196,255,1) 100%);
+  overflow: visible;
+  flex-direction: column;
   box-shadow: 5px rgba(0,0,0,0.2);
   z-index: 10;
-  text-align: center;
-  justify-content: center;
+  text-align: left;
+  justify-content: space-around;
+  font-family: 'Open Sans', sans-serif;
+  min-width: 200px;
 }
 
 .navbar a {
   text-align: center;
   float: left;
-  font-size: 2em;
-  color: white;
-  text-align: center;
+  font-size: 1.5vw;
+  color: slategrey;
+  text-align: left;
   justify-content: center;
   padding: 14px 16px;
   text-decoration: none;
   box-shadow: 5px rgba(0,0,0,0.2);
+  min-width: 200px;
+  z-index: 10;
 }
 
 .dropdown {
@@ -77,36 +169,36 @@ a.back-to-top {
 }
 
 .dropdown .dropbtn {
-  font-size: 2em;
+  font-size: 1.5vw;
   border: none;
   outline: none;
-  color: white;
+  color: slategrey;
   padding: 14px 16px;
   background-color: inherit;
-  font-family: inherit;
+  font-family: 'Open Sans', sans-serif;
   margin: 0;
 }
 .dropbtn {
   color: black;
 }
 .navbar a:hover, .dropdown:hover {
-  background-color: ;
-  color: black;
+  background-color:;
+  color: mediumspringgreen;
 }
 
 .dropdown-content {
   display: none;
-  position: absolute;
-  color: black;
+  position: ;
+  color: slategrey;
   background-color: white;
-  min-width: 160px;
+  min-width: 200px;
   box-shadow: 0px 8px 16px 10px rgba(0,0,0,0.2);
-  z-index: 1;
+  z-index: 11;
 }
 
 .dropdown-content a {
   float: none;
-  color: black;
+  color: slategrey;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -114,273 +206,308 @@ a.back-to-top {
 }
 
 .dropdown-content a:hover {
-  background-color: black;
-  color: white;
+  background-color: ;
+  color: mediumspringgreen;
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
 }
-/* Text and Font Formatting */
+
+/* Font Formatting */
 
 h1 {
-  font-family: helvetica;
-  color: black;
-  display: inline;
-  margin-left: 10%;
-  font-size: 5vw;
+  font-family: 'Open Sans', sans-serif;
+  color: slategray;
+  font-size: 7vh;
+  padding-left: 20px;
+  font-weight: bolder;
 }
-
 h2 {
-  font-family: helvetica;
-  color: grey;
-  margin-left: 10%;
+  font-family: 'Open Sans', sans-serif;
+  color: mediumspringgreen;
+  font-size: 3vh;
+  padding-left: 20px;
+  font-weight: bolder;
 }
 
 h3 {
-  font-family: helvetica;
-  color: white;
-  margin: 50px;
-}
-
-h4 {
-  font-family: helvetica;
-  color: white;
-  margin: 50px;
-}
-
-h5 {
-  font-family: helvetica;
-  color: grey;
-  display: inline;
-  margin: 50px;
-}
-h6 {
-  font-family: helvetica;
+  font-family: 'Open Sans', sans-serif;
   color: black;
-  display: inline;
-  margin: ;
-}
-/* Link Formatting */
-
-
-
-/* DIV Formatting */
-
-div.title_center {
-  text-align: center;
+  font-size: 2.5vh;
+  padding-left: 20px;
+  font-weight: lighter;
 }
 
-div.content_center {
-  margin-left: 10%;
-  margin-right: 10%;
-}
-
-div.content_light {
-  width: 100%;
-  height:100%;
-  margin:auto;
-  background: white;
-
-}
-div.content_dark {
-  width: 100%;
-  height: 100vh;
-  background: rgb(224,224,224);
-  background: linear-gradient(340deg, rgba(224,224,224,1) 0%, rgba(255,255,255,1) 50%);
-}
-
-
-/* Contents Formatting */
-
-strong {
-  word-wrap: break-word;
-}
-.content_wrap1 {
-  display: flex;
-  width: auto;
-  margin: 50px;
-}
-.content_wrap2 {
-  display: flex;
-  width: auto;
-  margin: 50px;
-}
-.content_wrap3 {
-  display: flex;
-  width: auto;
-  margin: auto;
-}
-.content_wrap4 {
-  display: flex;
-  width: auto;
-  margin: auto;
-}
-.column_left {
-  float: left;
-  flex: 1;
-  width: 45%;
-  padding: auto;
-  display: block;
-  margin: 0 auto;
-}
-.column_right {
-  float: right;
-  width: 45%;
-  padding: auto;
-  display: block;
-  margin: 0 auto;
-}
-.row {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.image_left {
-  float: left;
-  flex: 1;
-  width: 30%;
-  padding: auto;
-  display: block;
-  margin: 0 auto;
-  align-content: right;
-}
-
-.image_right {
-  float: right;
-  width: 30%;
-  padding: auto;
-  align-content: left;
-  display: block;
-  margin: 0 auto;
-}
-
-.text_left {
-  float: left;
-  flex: 1;
-  width: 60%;
-  padding: auto;
-}
-.text_right {
-  float: right;
-  width: 60%;
-  padding: auto;
-}
-p.body {
-  font-family: helvetica;
+p.heading {
+  font-family: 'Open Sans', sans-serif;
   font-size: 2em;
   color: black;
-  margin-left: 20%;
-  margin-right: 20%;
-  text-align: justify;
-  text-justify: inter-word;
+  margin-left: 5%;
+  text-align: left;
+  letter-spacing: 2px;
+  line-height: 1;
+  font-weight: 900;
 }
 
-p.body_light {
-  font-family: helvetica;
-  font-size: 0.8em;
+p.subheading {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5vw;
   color: black;
-  margin: 20%;
-  text-align: justify;
+  font-weight: bold;
+  margin-left: 10%;
+  margin-right: 10%;
+  text-align: left;
   text-justify: inter-word;
+  letter-spacing: 2px;
 }
-
-p.body_left {
-  font-family: helvetica;
-  font-size: 0.7em;
-  color: black;
-  margin: 50px;
-  text-align: ;
+p.body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1em;
+  font-weight: lighter;
+  line-height: 1.6;
+  letter-spacing: 2px;
+  color: grey;
+  margin-left: 10%;
+  margin-right: 10%;
+  text-align: left;
+  justify-content: space-around;
 }
 
 ul {
-  font-family: helvetica;
-  font-size: 0.8em;
-  color: White;
-  margin-left: 35px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: lighter;
+  font-size: 1em;
+  line-height: 1.6;
+  letter-spacing: 2px;
+  color: grey;
+  margin-left: 10%;
+  margin-right: 10%;
   text-align: left;
+}
+/* IMG Formatting */
+
+img.logo {
+  max-width: 90%;
+}
+
+img.article {
+  width: 200px;
+  float: left;
+  justify-content:
+  display:inline-block;
+  vertical-align: middle;
 }
 
 img {
-  max-width: 100%;
-  opacity: 0.9;
-  overflow: hidden;
-  z-index: -10;
-}
-
-figcaption {
-  font-size: 0.7em;
-  text-align: left;
-  opacity: .5;
+  max-width: 80%;
+  height: auto;
 }
 
 </style>
 
 <head>
-<meta charset="utf-8">
-<title>COSC1078 - Wildcats - Assignment 2: Industry Data</title>
+  <meta charset="utf-8">
+  <title>COSC1078 - Wildcats - Assignment 2: Industry Data</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <a href="#" id="back-to-top" class="back-to-top" style="display: inline;">Top</a>
-  <div class="navbar">
-    <a href="index.html">
-    <img style="height:50%;width:50%;" src="site/images/header_white.png">
-    </a>
-    <div class="dropdown">
-      <button class="dropbtn">About the team
-        <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-content">
-        <a href="site_about.html">The Team</a>
-        <a href="site_about_team.html">Personality Profiles</a>
-        <a href="site_about_jobs.html">Ideal Jobs</a>
-        <a href="site_about_feedback.html">Feedback</a>
-        <a href="site_about_reflection.html">Group Reflection</a>
+  <div class="container">
+    <a href="#" id="back-to-top" class="back-to-top" style="display: inline;">Top</a>
+    <div class="left">
+      <div class="navbar">
+        <a href="index.html">
+        <img class="logo" src="site/images/logo.png">
+        </a>
+        <div class="dropdown">
+          <button class="dropbtn">About the team
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="site_about.html">The Team</a>
+            <a href="site_about_team.html">Personality Profiles</a>
+            <a href="site_about_jobs.html">Ideal Jobs</a>
+            <a href="site_about_feedback.html">Feedback</a>
+            <a href="site_about_reflection.html">Group Reflection</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Tools
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="site_tools_github.html">Github</a>
+            <a href="site_tools_msteams.html">MS Teams</a>
+          </div>
+        </div>
+        <a href="site_industrydata.html">Industry Data</a>
+        <a href="site_it-work.html">IT Work</a>
+        <div class="dropdown">
+          <button class="dropbtn">IT Technologies
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="site_it-tech_cloud.html">Cloud, Services & Servers</a>
+            <a href="site_it-tech_cyber.html">Cybersecurity</a>
+            <a href="site_it-tech_machine.html">Machine Learning</a>
+            <a href="site_it-tech_chatterbot.html">Natural Language processing and chatterbots</a>
+          </div>
+        </div>
+        <a href="site_projectideas.html">Project Ideas</a>
+        <a href="site_references.html">References</a>
       </div>
     </div>
-    <div class="dropdown">
-      <button class="dropbtn">Tools
-        <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-content">
-        <a href="site_tools_github.html">Github</a>
-        <a href="site_tools_msteams.html">MS Teams</a>
+    <div class="right">
+      <div class="container_main">
+        <article>
+          <h1>Industry Data</h1>
+          <h3>Written by Glenn Tang s3601278</h3>
+          <h2>Wildcats Ideal Jobs and How they Rank</h2>
+            <p class="body">
+              <ul>
+                  <li>Software Engineer</li>
+                  <img src="site/images/industry_data/software engineer.png" style="float:right">
+                  <ul>
+                      <li>A job that is always in need for any business that is growing with IT. Software Engineers are always on the forefront with creating and innovating the business foward</li>
+                  </ul>
+                  <li>Machine Learning Engineer</li>
+                  <ul>
+                      <li>As we evolve with technology, the demand for more automation of smaller and more repetitive tasks allows for jobs such as these. Prime examples of these would be in the car manufacturing industry where a lot of the assembly line tasks are automated</li>
+                  </ul>
+                  <li>Developer/Front end UI/UX Designer</li>
+                  <img src="site/images/industry_data/uixdesdev.png" style="float:right">
+                  <ul>
+                      <li>Development is a necessity for any business that is wanting to grow with IT. As the demand of increases to become a more digital society, businesses will need to innovate themselves to set them apart, making this a well needed job withint he industry</li>
+                      <li>Front end UI/UX will always be in demand as users are always in the forefront when visiting a website and how their experience is. Returning customers are the ones that help retain business and increase growth</li>
+                  </ul>
+                  <li>Business Consultant</li>
+                  <ul>
+                      <li>Intertwined with the different aspects of a business, consultants are to align with the different departments to achieve the overall business goals is a necessity</li>
+                  </u>
+                  <li>Enterprise Architect</li>
+                  <img src="site/images/industry_data/Enterprise Architect.png" style="float:right;width:524px;height:165px;">
+                      <ul>
+                          <li>This brings commercial requirements of a business and brings it to a reality on a technical level, a job that is well needed in an industry that is still evolving with IT.</li>
+                      </ul>
+                  <li>IT Administrator</li>
+                        <ul>
+                            <li>Regardless of the industry with the job ad listed, IT Administrators are always in demand with the evolution of IT within a business</li>
+                        </ul>
+                  </ul>
+                </ul>
+              <img src="site/images/industry_data/Burning Glass IT Job Titles.png" style="float:center">
+            </p>
+            </article>
+            <article>
+            <h2>Identifying different skillsets that are required for these jobs</h2>
+              <p class="body">
+            <h3>General Skills</h3>
+            <img src="site/images/industry_data/Burning Glass General Skill 2017-2018.png" style="float:right">
+                <ul>
+                    <li>Communication</li>
+                    <ul>
+                        <li>Spoken and Written</li>
+                        <ul>
+                          <li>This skill usually will be required mostly in English working within Australia as it’s the country’s most spoken and acknowledged language, both forms of communication will be used throughout the job physical and technological</li>
+                        </ul>
+                    </ul>
+                    <li>Problem Solving</li>
+                    <ul>
+                        <li>A skill that is needed to aid in any issues that may arise from working within the business, whether it’d be basic IT admin issues to more complicated coding issues, problem solving will come in different formats</li>
+                    </ul>
+                    <li>Problem Solving</li>
+                    <ul>
+                        <li>A skill that is needed to aid in any issues that may arise from working within the business, whether it’d be basic IT admin issues to more complicated coding issues, problem solving will come in different formats</li>
+                    </ul>
+                    <li>Collaboration and working with other departments (team work)</li>
+                    <ul>
+                        <li>Within the field of IT no matter which job title you hold, there will always be a need to collaborate and work with different departments and clients within a business, this will be to ensure that the scope of the project will be completed in a manner that will satisfy all</li>
+                    </ul>
+                    <li>Meeting the demand of the client</li>
+                    <ul>
+                        <li>Ensure any issues that client may present be solved</li>
+                        <li>Any requests with deadlines and providing reasonability of the scope</li>
+                    </ul>
+                    <li>Proficiency in Microsoft 365 with a general understanding of Adobe </li>
+                    <ul>
+                        <li>Office, Excel, PowerPoint, Outlook and even Photoshop are becoming more and more of a basic requirement that initially was an IT specific skill, now has moved to a more general need to know understanding</li>
+                    </ul>
+                </ul>
+              </p>
+              <h3>IT Specific Skills</h3>
+              <p class="body">
+              <img src="site/images/industry_data/Burning Glass IT Specific Skills.png" style="float:right">
+                  <ul>
+                      <li>HTML/CSS</li>
+                      <ul>
+                          <li>Both front and back end to ensure that their current web operations are smooth for the user’s experience. Ability to identify issues and make adjustments to the required scope where needed</li>
+                      </ul>
+                      <li>SQL - Basic Understanding</li>
+                      <ul>
+                          <li>This would be to create and find specific queries and generate reports to allow for specific data to be presented to any parties</li>
+                      </ul>
+                      <li>Python</li>
+                      <ul>
+                          <li>Python is known to be one of the easiest forms of coding since it uses a plain English format. Seemingly, one of the types of coding that a lot of people are starting to learn</li>
+                      </ul>
+                      <li>Understanding and Usage of Cloud-Based Platforms</li>
+                      <ul>
+                          <li>Since the digital world is slowly integrating cloud-based platforms into their business, a knowledge of how to efficiently use any cloud-based platforms is becoming more and more relevant</li>
+                      </ul>
+                      <li>JavaScriptt</li>
+                      <ul>
+                          <li>•	An essential type of code that incorporates into most web development programs that creates its own virtual environment</li>
+                      </ul>
+                  </ul>
+                </p>
+              <h3>Wildcats V Data</h3>
+              <p class="body">
+Most of the skills that’s required from an IT lens the team have a very good basic understand of most of the skills that are listed within the top 10 of the Burning Glass data. The general skills within the terms of demand align very closely to what the team have listed as a skill set. Comparing to what the team hasn’t listed out, these are the top 3 IT and General skills that team Wildcats lack in:
+                <ul>
+                    <li>C#</li>
+                      <ul>
+                        <li>C# is the most widely used programming language to develop a lot of desktop and web applications to be used. It has an easy route to introduction as it aligns pretty closely to other programming languages including C++ and Java</li>
+                      </ul>
+                    <li>Linux</li>
+                      <ul>
+                        <li>An operating system (OS) that is beloved by plenty of IT Administrators and enthusiasts alike due to its open-source nature and low cost of entry for a business. The OS has very little restrictions to what you’re able to do</li>
+                      </ul>
+                    <li>Java</li>
+                      <ul>
+                        <li>The versatility of its language with its ability to run on plenty of different hardware makes it universal. With its large array of open-source libraries and popularity, it’s definitely one to get a better understanding of</li>
+                      </ul>
+                    <li>Java</li>
+                      <ul>
+                        <li>The versatility of its language with its ability to run on plenty of different hardware makes it universal. With its large array of open-source libraries and popularity, it’s definitely one to get a better understanding of</li>
+                      </ul>
+                    <li>Trouble Shooting</li>
+                      <ul>
+                        <li>Being within an IT role, it’s not limited to only the work that will be assigned to you. You’ll be potentially tasks with a lot of trouble shooting of basic IT issues such as connection to the internet, being locked of a user’s system, the expectation will be to aid in others wit these sorts of issues</li>
+                      </ul>
+                    <li>Detail-Orientated</li>
+                      <ul>
+                        <li>Having a majority of job titles that the team has chosen that lies within a more coding job, a detail-orientated mindset will allow for a clearer operation to clearly hit the job scope on the head. Clients tend to be picky and set on what their ideas, so ensuring that it’s completed is vital for a business to succeed</li>
+                      </ul>
+                    <li>Planning</li>
+                      <ul>
+                        <li>A vital skill that is needed for one to succeed, planning from the very get go when the scope is handed to you, to planning for any obstacles that get in your way. The ability to plan and adapt on the go is one that is learned through experience</li>
+                      </ul>
+                </ul>
+              </P>
+              <p class="body">
+With the Burning Glass Data, a lot of it does align with what the team has placed down within their ideal jobs. Despite with some team members having very little experience in some aspects, through experience of university and internships we’re able to further develop the skillsets.
+</p>
+              </article>
+          </div>
+        </div>
       </div>
-    </div>
-    <a href="site_industrydata.html">Industry Data</a>
-    <a href="site_it-work.html">IT Work</a>
-    <div class="dropdown">
-      <button class="dropbtn">IT Technologies
-        <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-content">
-        <a href="site_it-tech_cloud.html">Cloud, Services & Servers</a>
-        <a href="site_it-tech_cyber.html">Cybersecurity</a>
-        <a href="site_it-tech_machine.html">Machine Learning</a>
-        <a href="site_it-tech_chatterbot.html">Natural Language processing and chatterbots</a>
-      </div>
-    </div>
-    <a href="site_projectideas.html">Project Ideas</a>
-    <a href="site_references.html">References</a>
-  </div>
-  <a id="1"></a>
-  <div class="content_dark">
-    <br>
-    <br>
-    <h1>Industry Data</h1>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-  </div>
-
 <script>
   var link = document.getElementById("back-to-top");
   var amountScrolled = 250;
