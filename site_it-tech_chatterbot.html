@@ -2,18 +2,112 @@
 <html>
 <style>
 
-/* Menu Structure */
+<!DOCTYPE html>
+<html>
+<style>
 
 body {
-  margin: 0;
-  font-size: 1em;
-  font-family: helvetica, sans-serif;
-  background-color: white;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 2px;
+  background: rgb(247,247,247);
+  background: radial-gradient(circle, rgba(247,247,247,1) 0%, rgba(255,255,255,1) 50%);
 }
+
+/* DIV, Containers and Articles */
+
+article {
+  width: 80%;
+  height: auto;
+  border-bottom: 1px solid grey;
+  box-shadow: 5px rgba(0,0,0,0.2);
+  text-align: left;
+}
+
+div.container {
+  display: flex;
+  width:inherit;
+  z-index: 0;
+  overflow: scroll;
+  padding: 1px;
+}
+div.container_main {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  z-index: 0;
+  overflow: scroll;
+  padding: 1px;
+  text-align: ;
+}
+div.left {
+  width:15vw;
+  height: 100vh;
+  overflow: visible;
+  float: left;
+  z-index: 10;
+}
+div.right {
+  width: 85vw;
+  overflow: scroll;
+  display: flex;
+  margin: ;
+  z-index: 1;
+
+}
+div.title {
+  margin-top: 20px;
+  padding: 0%;
+}
+
+div.footer {
+  height: auto;
+  border-top: 1px solid grey;
+  background-color: black;
+  display: flex;
+}
+
+/* Article Divs */
+div.article1 {
+  width: 100%;
+  height: 20%;
+  order: 1;
+  float: right;
+}
+div.article2 {
+  width: 80%;
+  height: 20%;
+  order: 2;
+}
+div.article3 {
+  width: 80%;
+  height: 20%;
+  order: 3;
+}
+div.article4 {
+  width: 80%;
+  height: 20%;
+  order: 4;
+}
+
+div.article_wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+div.img {
+  width: 220px;
+  justify-content: center;
+  margin: 15px;
+
+  float:left;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
 /* Back to top start */
 .back-to-top {
-  background: rgb(2,20,162);
-  background: linear-gradient(340deg, rgba(2,20,162,1) 0%, rgba(0,196,255,1) 100%);
+  background-color: mediumspringgreen;
   color: white;
   opacity: 0;
   transition: opacity .6s ease-in-out;
@@ -40,7 +134,7 @@ a.back-to-top {
 }
 
 .back-to-top:hover, .back-to-top:focus, .back-to-top:visited {
-  color: #FFFFFF;
+  color: slategray;
 }
 
 .back-to-top.show {
@@ -48,27 +142,31 @@ a.back-to-top {
 }
 /* Back to top end */
 
-/* navbar */
+/* navigation */
 .navbar {
-  overflow: hidden;
-  background: rgb(2,20,162);
-  background: linear-gradient(340deg, rgba(2,20,162,1) 0%, rgba(0,196,255,1) 100%);
+  overflow: visible;
+  flex-direction: column;
   box-shadow: 5px rgba(0,0,0,0.2);
   z-index: 10;
-  text-align: center;
-  justify-content: center;
+  text-align: left;
+  justify-content: space-around;
+  font-family: 'Open Sans', sans-serif;
+  min-width: 200px;
+
 }
 
 .navbar a {
   text-align: center;
   float: left;
-  font-size: 2em;
-  color: white;
-  text-align: center;
+  font-size: 1.5vw;
+  color: slategrey;
+  text-align: left;
   justify-content: center;
   padding: 14px 16px;
   text-decoration: none;
   box-shadow: 5px rgba(0,0,0,0.2);
+  min-width: 200px;
+  z-index: 10;
 }
 
 .dropdown {
@@ -77,36 +175,36 @@ a.back-to-top {
 }
 
 .dropdown .dropbtn {
-  font-size: 2em;
+  font-size: 1.5vw;
   border: none;
   outline: none;
-  color: white;
+  color: slategrey;
   padding: 14px 16px;
   background-color: inherit;
-  font-family: inherit;
+  font-family: 'Open Sans', sans-serif;
   margin: 0;
 }
 .dropbtn {
   color: black;
 }
 .navbar a:hover, .dropdown:hover {
-  background-color: ;
-  color: black;
+  background-color:;
+  color: mediumspringgreen;
 }
 
 .dropdown-content {
   display: none;
-  position: absolute;
-  color: black;
+  position: ;
+  color: slategrey;
   background-color: white;
-  min-width: 160px;
+  min-width: 200px;
   box-shadow: 0px 8px 16px 10px rgba(0,0,0,0.2);
-  z-index: 1;
+  z-index: 11;
 }
 
 .dropdown-content a {
   float: none;
-  color: black;
+  color: slategrey;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -114,325 +212,158 @@ a.back-to-top {
 }
 
 .dropdown-content a:hover {
-  background-color: black;
-  color: white;
+  background-color: ;
+  color: mediumspringgreen;
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
 }
-/* Text and Font Formatting */
-header {
-  font-family: helvetica;
-  font-size: 5em;
-}
+
+/* Font Formatting */
 
 h1 {
-  font-family: helvetica;
-  color: black;
-  display: inline;
-  font-size: 3vw;
-  margin-left: 150px;
+  font-family: 'Open Sans', sans-serif;
+  color: slategray;
+  font-size: 7vh;
+  padding-left: 20px;
+  font-weight: bolder;
 }
-
 h2 {
-  font-family: helvetica;
-  color: grey;
-  margin-left: 10%;
+  font-family: 'Open Sans', sans-serif;
+  color: mediumspringgreen;
+  font-size: 3vh;
+  padding-left: 20px;
+  font-weight: bolder;
 }
 
 h3 {
-  font-family: helvetica;
-  color: white;
-  margin: 50px;
-}
-
-h4 {
-  font-family: helvetica;
-  color: white;
-  margin: 50px;
-}
-
-h5 {
-  font-family: helvetica;
+  font-family: 'Open Sans', sans-serif;
   color: grey;
-  display: inline;
-  margin: 50px;
-}
-h6 {
-  font-family: helvetica;
-  color: black;
-  display: inline;
-  margin: ;
-}
-/* Link Formatting */
-
-
-
-/* DIV Formatting */
-
-div.title_center {
-  text-align: center;
-}
-
-div.content_center {
-  margin-left: 10%;
-  margin-right: 10%;
-}
-
-div.content_light {
-  width: 100%;
-  height:100%;
-  margin:auto;
-  background: white;
-
-}
-div.content_dark {
-  width: 100%;
-  height: 100%;
-  background: rgb(224,224,224);
-  background: linear-gradient(340deg, rgba(224,224,224,1) 0%, rgba(255,255,255,1) 50%);
-}
-
-
-/* Contents Formatting */
-
-strong {
-  word-wrap: break-word;
-}
-.content_wrap1 {
-  display: flex;
-  width: auto;
-  margin: 50px;
-}
-.content_wrap2 {
-  display: flex;
-  width: auto;
-  margin: 50px;
-}
-.content_wrap3 {
-  display: flex;
-  width: auto;
-  margin: auto;
-}
-.content_wrap4 {
-  display: flex;
-  width: auto;
-  margin: auto;
-}
-.column_left {
-  float: left;
-  flex: 1;
-  width: 45%;
-  padding: auto;
-  display: block;
-  margin: 0;
-}
-.column_right {
-  float: right;
-  width: 45%;
-  padding: auto;
-  display: block;
-  margin: 0;
-}
-.row {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.image_left {
-  float: left;
-  flex: 1;
-  width: 30%;
-  padding: auto;
-  display: block;
-  margin: 0 auto;
-  align-content: right;
-}
-
-.image_right {
-  float: right;
-  width: 30%;
-  padding: auto;
-  align-content: left;
-  display: block;
-  margin: 0 auto;
-}
-
-.image_center {
-  float: center;
-  width: 30%;
-  padding: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-.text_left {
-  float: left;
-  flex: 1;
-  width: 60%;
-  padding: auto;
-}
-.text_right {
-  float: right;
-  width: 60%;
-  padding: auto;
-}
-
-.author {
-  float:none;
-  width:15%;
-  flex: 1;
-  display: inline-block;
-  margin-top: 2%;
-  margin-left: 5%;
-}
-
-.column_right {
-  float: inherit;
-  width: 85%;
-  padding-left: 200px;
-  display: block;
-  margin: auto;
-  position: absolute;
-  top: 410px;
-}
-
-img.circle {
-  border-radius: 50%;
-  box-shadow: 0px 0px 10px 0px;
+  font-size: 1.5vh;
+  padding-left: 20px;
+  font-weight: lighter;
 }
 
 p.heading {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 4em;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 2em;
   color: black;
-  margin-left: 10%;
-  margin-right: 10%;
-  text-align: center;
-  text-justify: inter-word;
+  margin-left: 5%;
+  text-align: left;
+  letter-spacing: 2px;
+  line-height: 1;
+  font-weight: 900;
 }
 
 p.subheading {
-  font-family: helvetica;
-  font-size: 2.5em;
-  color: grey;
-  margin-left: 5%;
-  margin-right: 5%;
-  text-align: center;
-  text-justify: inter-word;
-}
-p.body {
-  font-family: helvetica;
-  font-size: 1.2em;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5vw;
   color: black;
+  font-weight: bold;
   margin-left: 10%;
   margin-right: 10%;
-  text-align: justify;
-  text-justify: inter-word;
-
-}
-
-p.body_light {
-  font-family: helvetica;
-  font-size: 0.8em;
-  color: black;
-  margin: 20%;
-  text-align: justify;
-  text-justify: inter-word;
-}
-
-p.body_left {
-  font-family: helvetica;
-  font-size: 0.7em;
-  color: black;
-  margin: 50px;
-  text-align: ;
-}
-
-ul {
-  font-family: helvetica;
-  font-size: 0.8em;
-  color: White;
-  margin-left: 35px;
   text-align: left;
+  text-justify: inter-word;
+  letter-spacing: 2px;
 }
-
-img {
-  max-width: 100%;
-  opacity: 0.9;
-  overflow: hidden;
-  z-index: -10;
-}
-
-figcaption {
-  font-size: 0.7em;
+p.body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1em;
+  font-weight: lighter;
+  line-height: 1.6;
+  letter-spacing: 2px;
+  color: grey;
+  margin-left: 10%;
+  margin-right: 10%;
   text-align: left;
-  opacity: .5;
+  justify-content: space-around;
 }
+
+/* IMG Formatting */
+img.logo {
+  max-width: 90%;
+}
+
+img.article {
+  width: 200px;
+  float: left;
+  justify-content:
+  display:inline-block;
+  vertical-align: middle;
+}
+
+
 
 </style>
 
 <head>
-<meta charset="utf-8">
-<title>COSC1078 - Wildcats - Assignment 2: Cybersecurity</title>
+  <meta charset="utf-8">
+  <title>COSC1078 - Wildcats - Assignment 2: ***INSERT PAGE HEADING***</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <a href="#" id="back-to-top" class="back-to-top" style="display: inline;">Top</a>
-  <div class="navbar">
-    <a href="index.html">
-    <img style="height:50%;width:50%;" src="site/images/header_white.png">
-    </a>
-    <div class="dropdown">
-      <button class="dropbtn">About the team
-        <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-content">
-        <a href="site_about.html">The Team</a>
-        <a href="site_about_team.html">Personality Profiles</a>
-        <a href="site_about_jobs.html">Ideal Jobs</a>
-        <a href="site_about_feedback.html">Feedback</a>
-        <a href="site_about_reflection.html">Group Reflection</a>
+  <div class="container">
+    <a href="#" id="back-to-top" class="back-to-top" style="display: inline;">Top</a>
+    <div class="left">
+      <div class="navbar">
+        <a href="index.html">
+        <img class="logo" src="site/images/logo.png">
+        </a>
+        <div class="dropdown">
+          <button class="dropbtn">About the team
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="site_about.html">The Team</a>
+            <a href="site_about_team.html">Personality Profiles</a>
+            <a href="site_about_jobs.html">Ideal Jobs</a>
+            <a href="site_about_feedback.html">Feedback</a>
+            <a href="site_about_reflection.html">Group Reflection</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Tools
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="site_tools_github.html">Github</a>
+            <a href="site_tools_msteams.html">MS Teams</a>
+          </div>
+        </div>
+        <a href="site_industrydata.html">Industry Data</a>
+        <a href="site_it-work.html">IT Work</a>
+        <div class="dropdown">
+          <button class="dropbtn">IT Technologies
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="site_it-tech_cloud.html">Cloud, Services & Servers</a>
+            <a href="site_it-tech_cyber.html">Cybersecurity</a>
+            <a href="site_it-tech_machine.html">Machine Learning</a>
+            <a href="site_it-tech_chatterbot.html">Natural Language processing and chatterbots</a>
+          </div>
+        </div>
+        <a href="site_projectideas.html">Project Ideas</a>
+        <a href="site_references.html">References</a>
       </div>
     </div>
-    <div class="dropdown">
-      <button class="dropbtn">Tools
-        <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-content">
-        <a href="site_tools_github.html">Github</a>
-        <a href="site_tools_msteams.html">MS Teams</a>
-      </div>
-    </div>
-    <a href="site_industrydata.html">Industry Data</a>
-    <a href="site_it-work.html">IT Work</a>
-    <div class="dropdown">
-      <button class="dropbtn">IT Technologies
-        <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-content">
-        <a href="site_it-tech_cloud.html">Cloud, Services & Servers</a>
-        <a href="site_it-tech_cyber.html">Cybersecurity</a>
-        <a href="site_it-tech_machine.html">Machine Learning</a>
-        <a href="site_it-tech_chatterbot.html">Natural Language processing and chatterbots</a>
-      </div>
-    </div>
-    <a href="site_projectideas.html">Project Ideas</a>
-    <a href="site_references.html">References</a>
-  </div>
   <a id="1"></a>
-  <div class="author">
-    <img class="circle" style="width:50%;" src="site/images/team/a1_profile_brayden.PNG">
-    <p style="font-size:1em; color:darkslategrey;">
-      Article written by<br> <strong>Braydan Shalders s3781601</strong>
-    </p>
-  </div>
-<div class="content_dark">
-  <div class="column_right">
-      <p class = "heading">Natural Language Processing and Chatterbots</h1>
+  <div class="right">
+    <div class="container_main">
+      <h3>Article written by Braydan Shalders @s3781601</h3>
+      <div class="title">
+        <h1>Natural Language Processing and Chatterbots</h1>
+      </div>
       <h2>What is it?</h2>
+    <article>
     <p class="body">Natural Language Processing (NLP) is a part of the branch of computer science involving artificial intelligence that is concerned with giving computers the ability to understand speech and text, similarly to humans. The combination of the rule-based modeling of language, called computational linguistics, with machine learning, deep learning and statistical models allows for computers to process human language as a whole as text or voice data and allows it to completely ‘understand’ it, including intent and sentiment. NLP aims to allow computer programs to translate text from one language to another, be able to respond and act upon spoken commands, and summarise copious amounts of text at a rapid rate, even in real time. A major challenge in NLP lies in effective propagation of derived knowledge when individualising one part of textual data to another. NLP tools have gone through a major evolutionary chain from basic Recurrent Neural Networks (RNN’s) to Long Short-Term Memory Networks (LSTM’s), upgrading towards the “Transformer” model architectures, which spawned many variants. </p>
       <h2>State-of-the-Art Techniques in NLP:</h2>
     <p class = "body">RNN’s are variants of regular feedforward fully connected neural networks having memory in their models. RNN’s are recurrent in how they perform the same function for each input datapoint. The output for a given input depends on the data processed from the previous cell. After the output has been produced, a copy is sent back into the network. When deciding, it considers the current input and the previous output it received and what it has learned. </p>
@@ -442,6 +373,7 @@ figcaption {
     <img class="image_center" style="width:90%;" src="site/images/NLP & Chatterbots/LSTM.png">
     <p class = "body">The Compressive Transformer model was proposed in 2019 by Google’s DeepMind as a long-range memory model. The paper written about it details how humans understand memory as the storage of past life-experiences in compressed form within the brain, and how humans have the ability to recall information and memories stored over a decade prior. It says that this is possible because we do not store all the sensory information we experienced at the time, but instead select, filter, and integrate the information into our memories via lossy compression. The Compressive Transformer is an extended variation of the Transformer model which similarly maps past hidden activations generated in the model to a smaller set of compressed memories. To achieve much better results, it uses the Attention Mechanism across all its memories and compressed memories, which gives it the ability to query both its short-term granular memory and longer-term coarse memory. </p>
     <img class="image_center" style="width:90%;" src="site/images/NLP & Chatterbots/Compressive.png">
+    <h2>Applications of NLP Technology:</h2>
     <p class = "body">NLP has many different applications within modern technology. The most common of these being search autocorrect and autocomplete. This is a feature of browsing that many take for granted but it has had a significant quality-of-life impact on everyday users of browsers and even social media. </p>
     <p class = "body">Language Translators are also part of the wide variety of technologies spawned from NLP technologies. Applications like google translate have been incredibly helpful to many people. Translators use machine translation and used to be based on dictionary-based rule systems, which was not always the most accurate, but due to constant upgrading of NLP models and the availability of vast amounts of data, the accuracy has increased greatly. </p>
     <p class = "body">Chatbots are incredibly useful to major companies when it comes to customer service and experience. Interacting with each and every customer manually is virtually impossible, especially so for larger companies. Chatbots are able to solve basic queries or are able to direct the customer to a representative if necessary. This not only saves the customer from having to wait in a queue to talk to a representative and saves the company money in call-center representative hiring. </p>
@@ -453,6 +385,7 @@ figcaption {
     <p class = "body">NLP is incredibly important not only regarding increasing quality of life, but it can also help resolve ambiguity in language. When it comes to human language, there are only a certain number of rules that are to be followed, beyond that, it is free reign for context-bound, sentimentality and randomness. As NLP technologies become better, AI will understand the free-flowing rules of human speech and be able to mimic and respond with better and better clarity. This also applies to the translation of languages. Sometimes phrases or words do not directly translate between languages, but interpreters will find a way to get the message across. NLP technologies will be able to do this in the future with more efficiency and less individual-based interpretation. What will end up changing is that jobs will become redundant, such as interpreters, because having an AI that will be able to do the job not only for free, but with more efficiency will be more beneficial to a company. Within a company, NLP technologies are used within companies to help make operations both more cost efficient and time efficient. The general public will also be affected by the increasingly growing field of NLP. With technologies like targeted marketing, users will have their online activity monitored and in return be shown products they may need or have shown interest in. This change in the industry will both create and make jobs redundant. As mentioned earlier, jobs such as interpreters will be made redundant as having a speech-recognition and translation AI would be much more efficient and cost-worthy than hiring an interpreter. It will create jobs in that people will need to program, maintain, and implement the AI and other technologies related to NLP. Technologies like the ones possible with NLP will make companies perform more efficiently, as well as increasing quality of life for the general public. </p>
     <h2>How will this affect you?</h2>
     <p class = "body">The evolution and growth of NLP technologies can only make things easier for us when it comes to our day-to-day lives. NLP technologies will make translation applications better, allow for home assistant technology to become more advanced, and be able to handle more complex commands and tasks. When it comes to online activity, everything from predictive text and searching to spell-check will be improved and polished to be the best it can be. We utilise and take for granted the trivial things that NLP technologies provide for us through our daily lives. With NLP technology, even large volumes of text will be summarised in order to efficiently deliver the message to users. NLP has been providing small quality-of-life benefits that we may look over and will continue to do so with efficiency and effectiveness as the field and technology continue to grow.</p>
+    </article>
   </div>
 </div>
 
