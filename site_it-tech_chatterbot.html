@@ -2,10 +2,6 @@
 <html>
 <style>
 
-<!DOCTYPE html>
-<html>
-<style>
-
 body {
   font-family: 'Open Sans', sans-serif;
   letter-spacing: 2px;
@@ -20,7 +16,7 @@ article {
   height: auto;
   border-bottom: 1px solid grey;
   box-shadow: 5px rgba(0,0,0,0.2);
-  text-align: left;
+  text-align: center;
 }
 
 div.container {
@@ -52,7 +48,6 @@ div.right {
   display: flex;
   margin: ;
   z-index: 1;
-
 }
 div.title {
   margin-top: 20px;
@@ -98,7 +93,6 @@ div.img {
   width: 220px;
   justify-content: center;
   margin: 15px;
-
   float:left;
   display: inline-block;
   vertical-align: middle;
@@ -152,7 +146,6 @@ a.back-to-top {
   justify-content: space-around;
   font-family: 'Open Sans', sans-serif;
   min-width: 200px;
-
 }
 
 .navbar a {
@@ -280,7 +273,19 @@ p.body {
   justify-content: space-around;
 }
 
+ul {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: lighter;
+  font-size: 1em;
+  line-height: 1.6;
+  letter-spacing: 2px;
+  color: grey;
+  margin-left: 10%;
+  margin-right: 10%;
+  text-align: left;
+}
 /* IMG Formatting */
+
 img.logo {
   max-width: 90%;
 }
@@ -293,13 +298,24 @@ img.article {
   vertical-align: middle;
 }
 
+img {
+  max-width: 80%;
+  height: auto;
+}
 
+a {
+  text-decoration: none;
+  color: slategrey;
+}
+a:hover {
+  color: mediumspringgreen;
+}
 
 </style>
 
 <head>
   <meta charset="utf-8">
-  <title>COSC1078 - Wildcats - Assignment 2: ***INSERT PAGE HEADING***</title>
+  <title>COSC1078 - Wildcats - Assignment 2: Natural language processing and chatterbots</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -358,12 +374,14 @@ img.article {
   <a id="1"></a>
   <div class="right">
     <div class="container_main">
-      <h3>Article written by Braydan Shalders @s3781601</h3>
+
       <div class="title">
         <h1>Natural Language Processing and Chatterbots</h1>
+        <h3>Article written by Braydan Shalders @s3781601</h3>
       </div>
-      <h2>What is it?</h2>
+
     <article>
+      <h2>What is it?</h2>
     <p class="body">Natural Language Processing (NLP) is a part of the branch of computer science involving artificial intelligence that is concerned with giving computers the ability to understand speech and text, similarly to humans. The combination of the rule-based modelling of language, called computational linguistics, with machine learning, deep learning and statistical models allows for computers to process human language as a whole as text or voice data and allows it to completely ‘understand’ it, including intent and sentiment. NLP aims to allow computer programs to translate text from one language to another, be able to respond and act upon spoken commands, and summarise copious amounts of text at a rapid rate, even in real time. A major challenge in NLP lies in the effective propagation of derived knowledge when individualising one part of textual data to another. NLP tools have gone through a major evolutionary chain from basic Recurrent Neural Networks (RNN’s) to Long Short-Term Memory Networks (LSTM’s), upgrading towards the “Transformer” model architectures, which spawned many variants. </p>
       <h2>State-of-the-Art Techniques in NLP:</h2>
     <p class = "body">RNN’s are variants of regular feedforward fully connected neural networks having memory in their models. RNN’s are recurrent in how they perform the same function for each input datapoint. The output for a given input depends on the data processed from the previous cell. After the output has been produced, a copy is sent back into the network. When deciding, it considers the current input and the previous output it received and what it has learned. </p>
