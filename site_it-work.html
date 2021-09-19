@@ -16,7 +16,7 @@ article {
   height: auto;
   border-bottom: 1px solid grey;
   box-shadow: 5px rgba(0,0,0,0.2);
-  text-align: left;
+  text-align: center;
 }
 
 div.container {
@@ -292,7 +292,13 @@ img.article {
   vertical-align: middle;
 }
 
-
+a {
+  text-decoration: none;
+  color: slategrey;
+}
+a:hover {
+  color: mediumspringgreen;
+}
 
 </style>
 
@@ -355,11 +361,9 @@ img.article {
       </div>
     </div>
     <div class="right">
-      <div class="container_main">
-        <div class="title">
+      <article>
+
           <h1>IT WORK</h1>
-        </div>
-      <div>
         <h2>What’s it like being a junior software developer at NAB?</h2>
         <p class="body">
           <strong>Find out for yourself, as we interview Kai Zhi Lam.</strong>
@@ -514,18 +518,9 @@ img.article {
         </em></strong></p>
 
 
-      </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+      </article>
   </div>
-
+</div>
 <script>
   var link = document.getElementById("back-to-top");
   var amountScrolled = 250;
